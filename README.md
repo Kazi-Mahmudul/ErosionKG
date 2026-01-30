@@ -5,11 +5,14 @@
 ## Project Structure
 
 - **`ontology/`**: Contains the `erosion_ontology.yaml` defining entities (e.g., `ErosionProcess`, `Landform`, `Factor`) and relations.
-- **`ingestion/`**: PDF extraction pipeline using **LlamaIndex** + **LlamaParse** (Multimodal Gemini 2.5 Flash).
-    - `pipeline.py`: Main extraction script with structural parsing and contextual enrichment.
-    - `schemas.py`: Pydantic models for structured output.
+- **`ingestion/`**: PDF extraction pipeline using **LlamaIndex** + **LlamaParse** (Multimodal Gemini 2.0 Flash).
+    - `pipeline.py`: Main ingestion script.
+- **`extraction/`**: Knowledge Graph construction pipeline.
+    - `kg_pipeline_manual.py`: Manual triplet extraction and Neo4j upsert pipeline.
+- **`prompts/`**: YAML-based prompt management system.
+    - `registry.py`: Handles prompt versioning and loading.
+    - `v1_baseline.yaml`: Baseline prompt configuration.
 - **`data/`**: Directory for input PDFs and output JSON.
-- **`api/`, `kg/`, `evaluation/`, `workflows/`**: Placeholder directories for future modules.
 
 ## Setup
 
@@ -20,10 +23,12 @@
     ```
 
 2.  **Create a `.env` file**:
-    Add your API keys:
     ```env
     GOOGLE_API_KEY=your_google_key
     LLAMA_CLOUD_API_KEY=your_llama_cloud_key
+    NEO4J_URI=neo4j+s://instance_id.databases.neo4j.io
+    NEO4J_USERNAME=neo4j
+    NEO4J_PASSWORD=your_password
     ```
 
 3.  **Install dependencies**:
@@ -33,12 +38,24 @@
 
 ## Usage
 
-**Run the Extraction Pipeline**:
-Place scientific PDFs in the `data/` folder and run:
+### 1. Ingest PDFs
+Place scientific PDFs in `data/raw_papers/` and run:
 ```bash
 python ingestion/pipeline.py
 ```
-This will generate `data/extracted_chunks.json` containing high-fidelity markdown chunks, structured tables, and metadata.
+This processes PDFs into `data/extracted_chunks.json`.
+
+### 2. Build Knowledge Graph
+Extract entities and relations and ingest them into Neo4j:
+```bash
+python extraction/kg_pipeline_manual.py
+```
+
+### 3. Prompt Management
+Manage prompt versions in `prompts/`. To switch versions, set the env var:
+```bash
+export PROMPT_VERSION=v1
+```
 
 ## Ontology
 The ontology is defined in `ontology/erosion_ontology.yaml` and includes research-grade definitions for landscape erosion domains.

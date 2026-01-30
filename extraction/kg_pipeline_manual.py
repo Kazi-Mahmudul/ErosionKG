@@ -14,6 +14,11 @@ from tqdm import tqdm
 from llama_index.llms.gemini import Gemini
 from llama_index.core import Document
 
+# Import the prompt registry
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from prompts import PromptRegistry
+
 # Configuration
 load_dotenv()
 NEO4J_URI = os.getenv("NEO4J_URI")
@@ -35,20 +40,24 @@ class RateLimitedGemini(Gemini):
         time.sleep(3)  # Rate limit
         return super().complete(*args, **kwargs)
 
-TRIPLET_EXTRACTION_PROMPT = '''
+# Load prompt from registry (defaults to v1)
+PROMPT_VERSION = os.getenv("PROMPT_VERSION", "v1")
+
+def get_prompt_template() -> str:
+    """Load prompt template from the registry."""
+    try:
+        prompts_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'prompts')
+        registry = PromptRegistry(prompts_dir)
+        config = registry.get(PROMPT_VERSION)
+        logger.info(f"Loaded prompt version: {config.metadata.version} ({config.metadata.description})")
+        return config.template
+    except Exception as e:
+        logger.warning(f"Failed to load prompt from registry: {e}. Using fallback.")
+        return FALLBACK_PROMPT
+
+# Fallback prompt in case registry fails
+FALLBACK_PROMPT = '''
 Extract knowledge graph triplets from the following text about landscape erosion.
-Each triplet should be in the format: (subject, relationship, object)
-
-Focus on extracting entities like:
-- Erosion processes (e.g., sheet erosion, gully erosion, rill erosion)
-- Landforms (e.g., slopes, valleys, watersheds)
-- Factors (e.g., rainfall, soil type, vegetation cover)
-- Metrics (e.g., soil loss rate, erosion index, R-factor)
-- Regions (e.g., geographic locations, study areas)
-
-Use relationships like:
-- CAUSES, AFFECTS, MODULATES, MEASURES, OCCURS_IN, ACTS_ON, COMPOSED_OF
-
 Return ONLY a JSON array of triplets. Example format:
 [{{"subject": "rainfall intensity", "relationship": "CAUSES", "object": "sheet erosion"}}]
 
@@ -60,12 +69,12 @@ TEXT:
 JSON TRIPLETS:
 '''
 
-def extract_triplets(llm, text: str) -> list:
+def extract_triplets(llm, text: str, prompt_template: str) -> list:
     """Extract triplets from text using LLM."""
     try:
         # Truncate very long texts
         truncated_text = text[:4000] if len(text) > 4000 else text
-        prompt = TRIPLET_EXTRACTION_PROMPT.format(text=truncated_text)
+        prompt = prompt_template.format(text=truncated_text)
         response = llm.complete(prompt)
         response_text = response.text.strip()
         
@@ -133,7 +142,10 @@ def run_kg_extraction(input_file: str = "data/extracted_chunks.json"):
     chunks = data.get("chunks", [])
     logger.info(f"Loaded {len(chunks)} chunks for KG extraction.")
 
-    # 4. Extract and Upsert Triplets
+    # 4. Load prompt template from registry
+    prompt_template = get_prompt_template()
+
+    # 5. Extract and Upsert Triplets
     total_triplets = 0
     processed = 0
     for i, chunk in enumerate(tqdm(chunks, desc="Extracting triplets")):
@@ -144,7 +156,7 @@ def run_kg_extraction(input_file: str = "data/extracted_chunks.json"):
             continue
         
         processed += 1
-        triplets = extract_triplets(llm, content)
+        triplets = extract_triplets(llm, content, prompt_template)
         
         if triplets:
             logger.info(f"Chunk {i}: Found {len(triplets)} triplets")
