@@ -2,4 +2,5 @@ llama-index-core
 llama-parse
 llama-index-llms-gemini
 python-dotenv
-pydantic
+pydantic<2.10
+llama-index-graph-stores-neo4j
