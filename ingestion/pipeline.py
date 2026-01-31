@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 from llama_parse import LlamaParse
 from llama_index.llms.gemini import Gemini
-from llama_index.core.node_parser import MarkdownElementNodeParser
+from llama_index.core.node_parser import MarkdownElementNodeParser, SentenceSplitter
 from llama_index.core import Document
 
 from schemas import ExtractedChunk, ChunkMetadata, ExtractionRun
@@ -130,45 +130,76 @@ def process_pdfs(data_dir: str = "data/raw_papers", output_file: str = "data/ext
         except Exception as e:
             logger.warning(f"Could not load existing file {output_file}: {e}")
 
+    # Process each PDF
+    chunks = []
+    
+    # Configure pdf2doi logging
+    import pdf2doi
+    pdf2doi.config.set('verbose', False)
+
     for pdf_path in pdf_files:
         filename = os.path.basename(pdf_path)
         logger.info(f"Processing: {filename}")
 
+        # Extract DOI
+        try:
+            results = pdf2doi.pdf2doi(pdf_path)
+            doi_url = f"https://doi.org/{results['identifier']}" if results and results.get('identifier') else "N/A"
+            logger.info(f"  - DOI: {doi_url}")
+        except Exception as e:
+            logger.warning(f"  - Failed to extract DOI: {e}")
+            doi_url = "N/A"
+        
         max_retries = 3
         for attempt in range(max_retries):
             try:
-                # 1. Parse PDF
+                # 1. Parse PDF - documents are per-page from LlamaParse
                 documents = parser.load_data(pdf_path)
                 full_text = "\n".join([doc.text for doc in documents])
                 
-                # 2. Contextual Enrichment
+                # 2. Simple citation - just use filename as reference
+                # DOI and page_number are the primary metadata for citations
+                import re
+                citation_str = filename.replace('.pdf', '').replace('_', ' ')
+                logger.info(f"  - Citation ref: {citation_str}")
+                
+                # 3. Contextual Enrichment
                 global_context = get_global_context(full_text)
                 logger.info(f"Global Context for {filename}: {global_context}")
 
-                # 3. Structural Parsing
-                node_parser = MarkdownElementNodeParser(llm=llm, num_workers=1) # Reduced to 1 to strictly respect 15 RPM free tier limit
-                nodes = node_parser.get_nodes_from_documents(documents)
+                # 4. Split each page into granular semantic chunks
+                # This preserves page number while providing more detail
+                sentence_splitter = SentenceSplitter(chunk_size=512, chunk_overlap=50)
                 
-                # 4. Process Nodes into Chunks
                 file_chunks = []
-                for node in nodes:
-                    header_path_val = node.metadata.get("header_path", "")
-                    if not header_path_val:
-                         header_path_val = f"Global Context: {global_context}"
-                    else:
-                         header_path_val = f"Global Context: {global_context} > {header_path_val}"
-
-                    chunk = ExtractedChunk(
-                        metadata=ChunkMetadata(
-                            source_file=filename,
-                            page_number=int(node.metadata.get("page_label", 0)) if node.metadata.get("page_label") else 0,
-                            header_path=header_path_val,
-                            chunk_id=str(uuid.uuid4()),
-                            last_modified=datetime.now().isoformat()
-                        ),
-                        content=node.get_content()
-                    )
-                    file_chunks.append(chunk)
+                for doc_idx, doc in enumerate(documents):
+                    # LlamaParse page_label is 1-indexed page number
+                    page_num = int(doc.metadata.get("page_label", doc_idx + 1))
+                    
+                    # Split page text into smaller chunks
+                    page_chunks = sentence_splitter.split_text(doc.text)
+                    
+                    for chunk_text in page_chunks:
+                        # Skip very short chunks (likely noise)
+                        if len(chunk_text.strip()) < 50:
+                            continue
+                        
+                        # Build header path
+                        header_path_val = f"Global Context: {global_context}"
+                        
+                        chunk = ExtractedChunk(
+                            metadata=ChunkMetadata(
+                                source_file=filename,
+                                page_number=page_num,
+                                header_path=header_path_val,
+                                chunk_id=str(uuid.uuid4()),
+                                last_modified=datetime.now().isoformat(),
+                                doi_url=doi_url,
+                                citation_str=citation_str
+                            ),
+                            content=chunk_text
+                        )
+                        file_chunks.append(chunk)
                 
                 all_chunks.extend(file_chunks)
                 logger.info(f"Successfully extracted {len(file_chunks)} chunks from {filename}")
@@ -197,3 +228,4 @@ def process_pdfs(data_dir: str = "data/raw_papers", output_file: str = "data/ext
 
 if __name__ == "__main__":
     process_pdfs()
+

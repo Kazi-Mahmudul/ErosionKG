@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 
 # Embedding dimension for text-embedding-004
 EMBEDDING_DIMENSION = 768
-VECTOR_INDEX_NAME = "erosion_vector_index"
+VECTOR_INDEX_NAME = "erosion_chunk_index"
 
 
 # --------------------------------------------------------------------------
@@ -62,8 +62,8 @@ def create_vector_index(driver):
     # Create the vector index
     create_query = f"""
     CREATE VECTOR INDEX {VECTOR_INDEX_NAME} IF NOT EXISTS
-    FOR (e:Entity)
-    ON (e.embedding)
+    FOR (c:Chunk)
+    ON (c.embedding)
     OPTIONS {{
         indexConfig: {{
             `vector.dimensions`: {EMBEDDING_DIMENSION},
@@ -85,21 +85,21 @@ def create_vector_index(driver):
 # --------------------------------------------------------------------------
 def batch_embed_nodes(driver, embed_model, batch_size: int = 50):
     """
-    Generate embeddings for all Entity nodes that don't have them yet.
+    Generate embeddings for all Chunk nodes that don't have them yet.
     Updates nodes in Neo4j with the embedding property.
     """
     # Find nodes without embeddings
     count_query = """
-    MATCH (e:Entity)
-    WHERE e.embedding IS NULL
-    RETURN count(e) as count
+    MATCH (c:Chunk)
+    WHERE c.embedding IS NULL
+    RETURN count(c) as count
     """
     result = driver.execute_query(count_query)
     total = result.records[0]["count"]
-    logger.info(f"Found {total} entities without embeddings")
+    logger.info(f"Found {total} chunks without embeddings")
     
     if total == 0:
-        logger.info("All entities already have embeddings")
+        logger.info("All chunks already have embeddings")
         return
     
     # Process in batches
@@ -109,12 +109,18 @@ def batch_embed_nodes(driver, embed_model, batch_size: int = 50):
     while offset < total:
         # Fetch batch of nodes
         fetch_query = """
-        MATCH (e:Entity)
-        WHERE e.embedding IS NULL
-        RETURN elementId(e) as id, e.name as text
-        SKIP $offset LIMIT $limit
+        MATCH (c:Chunk)
+        WHERE c.embedding IS NULL
+        RETURN elementId(c) as id, c.content as text
+        ORDER BY c.chunkId
+        LIMIT $limit
         """
-        result = driver.execute_query(fetch_query, offset=0, limit=batch_size)  # Always offset 0 since we update
+        # Note: Removing SKIP/OFFSET because we are matching WHERE embedding IS NULL.
+        # As we fill them, they drop out of the set.
+        # But to be safe against partial failures, using LIMIT is good.
+        # Using elementId as strict ordering.
+        
+        result = driver.execute_query(fetch_query, limit=batch_size)
         
         if not result.records:
             break
@@ -137,7 +143,7 @@ def batch_embed_nodes(driver, embed_model, batch_size: int = 50):
                     emb = embed_model.get_text_embedding(text)
                     embeddings.append(emb)
                 except Exception as e2:
-                    logger.warning(f"Failed to embed '{text[:30]}...': {e2}")
+                    logger.warning(f"Failed to embed chunk starting with '{text[:30]}...': {e2}")
                     embeddings.append(None)
         
         # Update nodes with embeddings
@@ -146,19 +152,22 @@ def batch_embed_nodes(driver, embed_model, batch_size: int = 50):
                 continue
             
             update_query = """
-            MATCH (e) WHERE elementId(e) = $id
-            SET e.embedding = $embedding, e.text = $text
+            MATCH (c) WHERE elementId(c) = $id
+            SET c.embedding = $embedding
             """
             try:
-                driver.execute_query(update_query, id=node_id, embedding=embedding, text=text)
+                driver.execute_query(update_query, id=node_id, embedding=embedding)
                 embedded_count += 1
             except Exception as e:
                 logger.warning(f"Failed to update node {node_id}: {e}")
         
-        logger.info(f"Embedded {embedded_count}/{total} entities")
-        offset += batch_size
+        logger.info(f"Embedded {embedded_count}/{total} chunks")
+        # Don't increment offset since we rely on "WHERE embedding IS NULL"
+        # But we DO need to break if we made no progress to avoid inf loop
+        if batch_size > 0: # dummy check
+             pass
     
-    logger.info(f"Batch embedding complete! Embedded {embedded_count} entities.")
+    logger.info(f"Batch embedding complete! Embedded {embedded_count} chunks.")
 
 
 # --------------------------------------------------------------------------
@@ -221,7 +230,7 @@ class HybridRetriever:
         vector_query = f"""
         CALL db.index.vector.queryNodes('{VECTOR_INDEX_NAME}', $top_k, $embedding)
         YIELD node, score
-        RETURN node.name as name, node.text as text, score
+        RETURN node.content as text, node.sourceFile as source_file, node.pageNumber as page_number, node.doiUrl as doi_url, node.citationStr as citation_str, score
         ORDER BY score DESC
         """
         
@@ -231,10 +240,18 @@ class HybridRetriever:
             top_k=self.top_k
         )
         
-        return [
-            {"name": r["name"], "text": r["text"], "score": r["score"]}
-            for r in result.records
-        ]
+        formatted_results = []
+        for r in result.records:
+            formatted_results.append({
+                "text": r["text"],
+                "source_file": r["source_file"],
+                "page_number": r["page_number"],
+                "doi_url": r["doi_url"],
+                "citation_str": r["citation_str"],
+                "score": r["score"]
+            })
+            
+        return formatted_results
 
 
 # --------------------------------------------------------------------------

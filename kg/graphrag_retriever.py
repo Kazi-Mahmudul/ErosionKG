@@ -25,7 +25,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Vector index name (from vector_index.py)
-VECTOR_INDEX_NAME = "erosion_vector_index"
+VECTOR_INDEX_NAME = "erosion_chunk_index"
 
 # Data paths
 CHUNKS_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "extracted_chunks.json")
@@ -37,6 +37,8 @@ class RetrievedChunk:
     content: str
     source_file: str
     page_number: Optional[int] = None
+    doi_url: Optional[str] = "N/A"
+    citation_str: Optional[str] = None
     score: float = 0.0
     entities: List[str] = field(default_factory=list)
 
@@ -126,14 +128,14 @@ class VectorSearcher:
         return self.chunks_cache
     
     def search(self, query: str, top_k: int = 3) -> List[RetrievedChunk]:
-        """Search for relevant chunks using vector similarity on Entity nodes."""
+        """Search for relevant chunks using vector similarity on Chunk nodes."""
         query_embedding = self.embed_model.get_text_embedding(query)
         
-        # Search entities and return their names as "chunks"
+        # Search chunks and return metadata
         vector_query = f"""
         CALL db.index.vector.queryNodes('{VECTOR_INDEX_NAME}', $top_k, $embedding)
         YIELD node, score
-        RETURN node.name as name, node.text as text, score
+        RETURN node.content as content, node.sourceFile as source_file, node.pageNumber as page_number, node.doiUrl as doi_url, node.citationStr as citation_str, score
         ORDER BY score DESC
         """
         
@@ -146,10 +148,13 @@ class VectorSearcher:
         chunks = []
         for r in result.records:
             chunk = RetrievedChunk(
-                content=r["text"] or r["name"],
-                source_file="graph",
+                content=r["content"],
+                source_file=r["source_file"],
+                page_number=r["page_number"],
+                doi_url=r["doi_url"],
+                citation_str=r["citation_str"],
                 score=r["score"],
-                entities=[r["name"]]
+                entities=[] # Entities will be linked by EntityLinker
             )
             chunks.append(chunk)
         
@@ -265,7 +270,8 @@ class ContextSynthesizer:
         if chunks:
             parts.append("## Relevant Entities (from Vector Search)")
             for i, chunk in enumerate(chunks, 1):
-                source = f"[Source: {chunk.source_file}]"
+                citation = chunk.citation_str or chunk.source_file
+                source = f"[Source: {citation}, Page: {chunk.page_number}]"
                 parts.append(f"{i}. **{chunk.content}** (score: {chunk.score:.3f}) {source}")
         
         # Graph triplets section
