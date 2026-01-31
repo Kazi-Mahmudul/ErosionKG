@@ -12,6 +12,7 @@
 - **`kg/`**: Knowledge Graph utilities.
     - `entity_resolution.py`: Semantic entity deduplication using fuzzy matching + LLM verification.
     - `vector_index.py`: Hybrid search with Gemini embeddings + Neo4j vector index.
+    - `graphrag_retriever.py`: Hybrid GraphRAG retriever with synonym expansion and multi-hop traversal.
 - **`prompts/`**: YAML-based prompt management system.
     - `registry.py`: Handles prompt versioning and loading.
     - `v1_baseline.yaml`: Baseline prompt configuration.
@@ -67,7 +68,13 @@ python kg/vector_index.py --setup
 python kg/vector_index.py --test-query "soil erodibility" --top-k 5
 ```
 
-### 5. Prompt Management
+### 5. GraphRAG Retrieval
+Perform hybrid retrieval combining vector search and graph traversal:
+```bash
+python kg/graphrag_retriever.py --query "What modulates rill erosion?" --top-k 3 --hops 1
+```
+
+### 6. Prompt Management
 Manage prompt versions in `prompts/`. To switch versions, set the env var:
 ```bash
 export PROMPT_VERSION=v1
