@@ -1,0 +1,4907 @@
+[
+  {
+    "timestamp": "2026-01-30T22:20:39.083937",
+    "master_name": "(Revised) Universal Soil Loss Equation",
+    "duplicate_name": "Universal Soil Loss Equation (USLE)",
+    "similarity_score": 90.41095890410959,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:19:51.738065",
+    "master_name": "0.2",
+    "duplicate_name": "0.21",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:20:47.848321",
+    "master_name": "0.2",
+    "duplicate_name": "0.25",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:20:52.576846",
+    "master_name": "0.2",
+    "duplicate_name": "0.26",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:20:57.038335",
+    "master_name": "0.2",
+    "duplicate_name": "0.52",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:21:01.292840",
+    "master_name": "10.45 t ha⁻¹ year⁻¹",
+    "duplicate_name": "11.5 t ha⁻¹ year⁻¹",
+    "similarity_score": 91.89189189189189,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:21:05.368218",
+    "master_name": "11.5 t ha⁻¹ year⁻¹",
+    "duplicate_name": "9.8 t ha⁻¹ year⁻¹",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:19:52.996709",
+    "master_name": "20 harvest sites",
+    "duplicate_name": "harvest sites",
+    "similarity_score": 89.65517241379311,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:21:14.856986",
+    "master_name": "20 harvest sites",
+    "duplicate_name": "harvest site",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:19:54.265395",
+    "master_name": "ASPECT",
+    "duplicate_name": "Aspect",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:19:55.526011",
+    "master_name": "ASPECT",
+    "duplicate_name": "aspect",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:19:56.770739",
+    "master_name": "ASPECT Surface Curvature (SFC)",
+    "duplicate_name": "Surface Curvature (SFC)",
+    "similarity_score": 86.79245283018868,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:19:58.019448",
+    "master_name": "Administrative Area",
+    "duplicate_name": "administrative area",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:19:59.261112",
+    "master_name": "Administrative Area",
+    "duplicate_name": "administrative areas",
+    "similarity_score": 97.43589743589743,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:00.630610",
+    "master_name": "Annual Sediment yield",
+    "duplicate_name": "Annual sediment yield",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:01.752705",
+    "master_name": "Artificial neural networks",
+    "duplicate_name": "artificial neural networks",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:03.055599",
+    "master_name": "Artificial neural networks",
+    "duplicate_name": "artificial neural network models",
+    "similarity_score": 86.20689655172413,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:04.339001",
+    "master_name": "Asia agricultural land",
+    "duplicate_name": "Asian agricultural land",
+    "similarity_score": 97.77777777777777,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:22:16.230119",
+    "master_name": "Asia agricultural land",
+    "duplicate_name": "agricultural land",
+    "similarity_score": 87.17948717948718,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:22:20.042072",
+    "master_name": "Asia agricultural land",
+    "duplicate_name": "China's agricultural land",
+    "similarity_score": 85.1063829787234,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:22:24.233229",
+    "master_name": "Asian agricultural land",
+    "duplicate_name": "agricultural land",
+    "similarity_score": 85.0,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:22:28.566736",
+    "master_name": "Aspect",
+    "duplicate_name": "aspect",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:05.857779",
+    "master_name": "Associated Disaster",
+    "duplicate_name": "associated disaster",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:22:36.402510",
+    "master_name": "Bare land",
+    "duplicate_name": "land area",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:07.125053",
+    "master_name": "C Factor",
+    "duplicate_name": "C factor",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:08.371587",
+    "master_name": "C Factor",
+    "duplicate_name": "C factors",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:22:48.622897",
+    "master_name": "C Factor",
+    "duplicate_name": "CP factor",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:22:52.628839",
+    "master_name": "C Factor",
+    "duplicate_name": "CP factors",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:09.584742",
+    "master_name": "C Factor",
+    "duplicate_name": "C-factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:00.752754",
+    "master_name": "C factor",
+    "duplicate_name": "C factors",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:04.612411",
+    "master_name": "C factor",
+    "duplicate_name": "CP factor",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:08.760417",
+    "master_name": "C factor",
+    "duplicate_name": "CP factors",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:12.636193",
+    "master_name": "C factor",
+    "duplicate_name": "C-factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:16.831185",
+    "master_name": "C factors",
+    "duplicate_name": "CP factors",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:22.097559",
+    "master_name": "C factors",
+    "duplicate_name": "CP factor",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:26.062021",
+    "master_name": "C factors",
+    "duplicate_name": "factors",
+    "similarity_score": 87.5,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:30.420032",
+    "master_name": "C values",
+    "duplicate_name": "CP values",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:34.885430",
+    "master_name": "C-factor",
+    "duplicate_name": "K-factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:40.981994",
+    "master_name": "C-factor",
+    "duplicate_name": "P-factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:46.723748",
+    "master_name": "C-factor",
+    "duplicate_name": "R-Factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:50.642397",
+    "master_name": "C-factor",
+    "duplicate_name": "R-factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:54.594925",
+    "master_name": "C-factor values",
+    "duplicate_name": "K-factor values",
+    "similarity_score": 93.33333333333333,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:23:58.543092",
+    "master_name": "C-factor values",
+    "duplicate_name": "R-factor values",
+    "similarity_score": 93.33333333333333,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:24:02.683735",
+    "master_name": "C-factor values",
+    "duplicate_name": "LS-factor values",
+    "similarity_score": 90.32258064516128,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:24:06.580590",
+    "master_name": "C-factor values",
+    "duplicate_name": "P factor values",
+    "similarity_score": 86.66666666666667,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:12.171488",
+    "master_name": "CC area with vegetation",
+    "duplicate_name": "CC with vegetation",
+    "similarity_score": 87.8048780487805,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:13.398257",
+    "master_name": "CP factor",
+    "duplicate_name": "CP factors",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:14.644600",
+    "master_name": "CP factor calculation",
+    "duplicate_name": "calculating CP factor",
+    "similarity_score": 95.23809523809523,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:15.902093",
+    "master_name": "Cashew-based Crops",
+    "duplicate_name": "cashew-based crops",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:17.151194",
+    "master_name": "Chittagong Hill Tracts",
+    "duplicate_name": "Chittagong hill tracts",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:18.400926",
+    "master_name": "Chittagong Hill Tracts",
+    "duplicate_name": "Chittagong hill tract",
+    "similarity_score": 97.67441860465115,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:19.640048",
+    "master_name": "Chittagong Hill Tracts",
+    "duplicate_name": "Chittagong Hill Tracts (CHT)",
+    "similarity_score": 88.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:24:43.190666",
+    "master_name": "Chittagong Hill Tracts (CHT)",
+    "duplicate_name": "Chittagong hill tracts",
+    "similarity_score": 88.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:24:47.913810",
+    "master_name": "Chittagong Hill Tracts (CHT)",
+    "duplicate_name": "Chittagong hill tract",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:24:53.799315",
+    "master_name": "Chittagong hill tract",
+    "duplicate_name": "Chittagong hill tracts",
+    "similarity_score": 97.67441860465115,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:22.256424",
+    "master_name": "Clay",
+    "duplicate_name": "clay",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:23.496953",
+    "master_name": "Clear Cut",
+    "duplicate_name": "clear cut",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:24.723971",
+    "master_name": "Cold spot",
+    "duplicate_name": "cold spot",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:25.946052",
+    "master_name": "Cold spot",
+    "duplicate_name": "cold spots",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:27.197547",
+    "master_name": "Collap se",
+    "duplicate_name": "collapse",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:28.445568",
+    "master_name": "Collapse distance",
+    "duplicate_name": "Collapse distance (CDe)",
+    "similarity_score": 85.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:29.707254",
+    "master_name": "Compound Topographic Index",
+    "duplicate_name": "Compound Topographic Index (CTI)",
+    "similarity_score": 89.65517241379311,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:30.953901",
+    "master_name": "Conventional tillage",
+    "duplicate_name": "conventional tillage",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:32.987019",
+    "master_name": "Crop",
+    "duplicate_name": "crop",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:34.237248",
+    "master_name": "Drainage Density",
+    "duplicate_name": "Drainage density",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:35.484391",
+    "master_name": "Drainage Density",
+    "duplicate_name": "drainage density",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:36.733629",
+    "master_name": "Drainage Density",
+    "duplicate_name": "high drainage density",
+    "similarity_score": 86.48648648648648,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:26:01.015460",
+    "master_name": "Drainage density",
+    "duplicate_name": "drainage density",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:26:06.073963",
+    "master_name": "Drainage density",
+    "duplicate_name": "high drainage density",
+    "similarity_score": 86.48648648648648,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:38.495041",
+    "master_name": "Elevation (DEM)",
+    "duplicate_name": "elevation (DEM)",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:39.725662",
+    "master_name": "Elevation Coefficient of Variation",
+    "duplicate_name": "Elevation Coefficient of Variation (ECV)",
+    "similarity_score": 91.89189189189189,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:26:18.706701",
+    "master_name": "Elevation Coefficient of Variation",
+    "duplicate_name": "Elevation Coefficients of Variation (ECV)",
+    "similarity_score": 90.66666666666666,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:40.972730",
+    "master_name": "Elevation Coefficient of Variation",
+    "duplicate_name": "elevation coefficients of variation (ECV)",
+    "similarity_score": 90.66666666666666,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:26:26.979201",
+    "master_name": "Elevation Coefficient of Variation (ECV)",
+    "duplicate_name": "Elevation Coefficients of Variation (ECV)",
+    "similarity_score": 98.76543209876543,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:26:30.888245",
+    "master_name": "Elevation Coefficient of Variation (ECV)",
+    "duplicate_name": "elevation coefficients of variation (ECV)",
+    "similarity_score": 98.76543209876543,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:26:35.267121",
+    "master_name": "Elevation Coefficients of Variation (ECV)",
+    "duplicate_name": "elevation coefficients of variation (ECV)",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:43.762367",
+    "master_name": "Erodibility",
+    "duplicate_name": "erodibility",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:45.016905",
+    "master_name": "Erosion",
+    "duplicate_name": "erosion",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:46.242343",
+    "master_name": "Erosion Estimation",
+    "duplicate_name": "erosion estimation",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:47.485881",
+    "master_name": "Erosion Estimation",
+    "duplicate_name": "soil erosion estimation",
+    "similarity_score": 87.8048780487805,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:48.814224",
+    "master_name": "Erosion Susceptibility",
+    "duplicate_name": "susceptibility to erosion",
+    "similarity_score": 93.61702127659575,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:50.084692",
+    "master_name": "Erosion Susceptibility",
+    "duplicate_name": "Soil Erosion Susceptibility",
+    "similarity_score": 89.79591836734694,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:51.410198",
+    "master_name": "Erosion Susceptibility",
+    "duplicate_name": "Soil erosion susceptibility",
+    "similarity_score": 89.79591836734694,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:52.643859",
+    "master_name": "Erosion Susceptibility",
+    "duplicate_name": "soil erosion susceptibility",
+    "similarity_score": 89.79591836734694,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:54.497283",
+    "master_name": "Extreme events",
+    "duplicate_name": "extreme events",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:55.737570",
+    "master_name": "Fault Density",
+    "duplicate_name": "fault density",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:27:39.609150",
+    "master_name": "Feature Factor selection",
+    "duplicate_name": "feature factor selection model",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:57.016242",
+    "master_name": "Field-based method",
+    "duplicate_name": "field-based method",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:58.245804",
+    "master_name": "Field-based method",
+    "duplicate_name": "field-based methods",
+    "similarity_score": 97.2972972972973,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:20:59.460736",
+    "master_name": "Flow Accumulation",
+    "duplicate_name": "Flow accumulation",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:00.709886",
+    "master_name": "Flow Accumulation",
+    "duplicate_name": "flow accumulation",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:28:05.031885",
+    "master_name": "Flow accumulation",
+    "duplicate_name": "flow accumulation",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:02.208013",
+    "master_name": "Flow direction",
+    "duplicate_name": "flow direction",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:03.447385",
+    "master_name": "Forest",
+    "duplicate_name": "forest",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:05.460049",
+    "master_name": "Forest Land",
+    "duplicate_name": "forest land",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:06.678735",
+    "master_name": "GIS-based method",
+    "duplicate_name": "GIS-based methods",
+    "similarity_score": 96.96969696969697,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:07.916594",
+    "master_name": "Geologic Environment",
+    "duplicate_name": "geologic environment",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:09.128438",
+    "master_name": "Geologic Environment",
+    "duplicate_name": "Geology Environment",
+    "similarity_score": 92.3076923076923,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:10.243234",
+    "master_name": "Geology",
+    "duplicate_name": "geology",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:28:53.902791",
+    "master_name": "Geology Environment",
+    "duplicate_name": "geologic environment",
+    "similarity_score": 92.3076923076923,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:28:57.980819",
+    "master_name": "Grande River Basin",
+    "duplicate_name": "Upper Grande river basin",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:11.766269",
+    "master_name": "Gully erosion",
+    "duplicate_name": "gully erosion",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:29:07.794665",
+    "master_name": "High productivity; chisel ploughing into residue",
+    "duplicate_name": "Low productivity; chisel ploughing into residue",
+    "similarity_score": 90.52631578947368,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:29:11.840362",
+    "master_name": "High productivity; conventional tillage",
+    "duplicate_name": "Low productivity; conventional tillage",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:29:15.589664",
+    "master_name": "High susceptibility area",
+    "duplicate_name": "Low susceptibility area",
+    "similarity_score": 85.1063829787234,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:12.985258",
+    "master_name": "Hot spot",
+    "duplicate_name": "hot spot",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:14.219140",
+    "master_name": "Hot spot",
+    "duplicate_name": "hot spots",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:15.940207",
+    "master_name": "Hubei Province",
+    "duplicate_name": "Hubei province",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:29:31.521364",
+    "master_name": "Hunan Province",
+    "duplicate_name": "Nan Province",
+    "similarity_score": 92.3076923076923,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:17.143981",
+    "master_name": "Identifying Characteristic",
+    "duplicate_name": "Identifying characteristic",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:18.344551",
+    "master_name": "Identifying Characteristic",
+    "duplicate_name": "identifying characteristics",
+    "similarity_score": 98.11320754716981,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:30:08.525345",
+    "master_name": "Identifying characteristic",
+    "duplicate_name": "identifying characteristics",
+    "similarity_score": 98.11320754716981,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:19.826484",
+    "master_name": "Jharkhand (India)",
+    "duplicate_name": "Jharkhand, India",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:21.064982",
+    "master_name": "K Factor",
+    "duplicate_name": "K factor",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:30:20.154142",
+    "master_name": "K Factor",
+    "duplicate_name": "L factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:30:23.991691",
+    "master_name": "K Factor",
+    "duplicate_name": "P Factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:30:28.090095",
+    "master_name": "K Factor",
+    "duplicate_name": "P factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:30:32.018874",
+    "master_name": "K Factor",
+    "duplicate_name": "R factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:30:35.702609",
+    "master_name": "K Factor",
+    "duplicate_name": "S factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:30:39.636480",
+    "master_name": "K factor",
+    "duplicate_name": "L factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:30:43.404032",
+    "master_name": "K factor",
+    "duplicate_name": "P Factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:30:47.449746",
+    "master_name": "K factor",
+    "duplicate_name": "P factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:30:51.697382",
+    "master_name": "K factor",
+    "duplicate_name": "R factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:30:55.450558",
+    "master_name": "K factor",
+    "duplicate_name": "S factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:30:59.354527",
+    "master_name": "K-factor",
+    "duplicate_name": "P-factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:31:03.357958",
+    "master_name": "K-factor",
+    "duplicate_name": "R-Factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:31:07.212379",
+    "master_name": "K-factor",
+    "duplicate_name": "R-factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:31:11.123579",
+    "master_name": "K-factor equation",
+    "duplicate_name": "R-factor equation",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:31:15.028749",
+    "master_name": "K-factor equation",
+    "duplicate_name": "R-factor equations",
+    "similarity_score": 91.42857142857143,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:31:18.898516",
+    "master_name": "K-factor values",
+    "duplicate_name": "R-factor values",
+    "similarity_score": 93.33333333333333,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:31:22.800369",
+    "master_name": "K-factor values",
+    "duplicate_name": "LS-factor values",
+    "similarity_score": 90.32258064516128,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:31:26.652909",
+    "master_name": "K-factor values",
+    "duplicate_name": "P factor values",
+    "similarity_score": 86.66666666666667,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:31:30.652253",
+    "master_name": "Klik et al. (2015)",
+    "duplicate_name": "Li et al. (2014)",
+    "similarity_score": 88.23529411764706,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:22.313682",
+    "master_name": "Knowledge Graph",
+    "duplicate_name": "Knowledge graph",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:23.567874",
+    "master_name": "Knowledge Graph",
+    "duplicate_name": "knowledge graph",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:31:42.461051",
+    "master_name": "Knowledge graph",
+    "duplicate_name": "knowledge graph",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:25.078015",
+    "master_name": "Kotmale Catchment",
+    "duplicate_name": "Kotmale catchment",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:31:50.326698",
+    "master_name": "L factor",
+    "duplicate_name": "LS Factor",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:31:54.115057",
+    "master_name": "L factor",
+    "duplicate_name": "LS factor",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:31:57.998504",
+    "master_name": "L factor",
+    "duplicate_name": "P Factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:32:02.080442",
+    "master_name": "L factor",
+    "duplicate_name": "P factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:32:05.979003",
+    "master_name": "L factor",
+    "duplicate_name": "R factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:32:10.385395",
+    "master_name": "L factor",
+    "duplicate_name": "S factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:26.934903",
+    "master_name": "LS Factor",
+    "duplicate_name": "LS factor",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:32:18.205260",
+    "master_name": "LS Factor",
+    "duplicate_name": "S factor",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:32:22.081846",
+    "master_name": "LS Factor",
+    "duplicate_name": "factors",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:32:26.045093",
+    "master_name": "LS factor",
+    "duplicate_name": "S factor",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:32:30.040191",
+    "master_name": "LS factor",
+    "duplicate_name": "factors",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:28.214981",
+    "master_name": "LS-Factor",
+    "duplicate_name": "LS-factor",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:32:38.195069",
+    "master_name": "LS-factor values",
+    "duplicate_name": "R-factor values",
+    "similarity_score": 90.32258064516128,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:29.560467",
+    "master_name": "Land degradation",
+    "duplicate_name": "land degradation",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:30.893828",
+    "master_name": "Land use types",
+    "duplicate_name": "land use types",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:32.176762",
+    "master_name": "Landslide Event",
+    "duplicate_name": "landslide events",
+    "similarity_score": 96.7741935483871,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:33.507315",
+    "master_name": "Lineament density",
+    "duplicate_name": "lineament density",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:34.812482",
+    "master_name": "Loading Deck",
+    "duplicate_name": "loading deck",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:36.188055",
+    "master_name": "Loading Deck",
+    "duplicate_name": "loading decks",
+    "similarity_score": 96.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:38.188720",
+    "master_name": "Loam",
+    "duplicate_name": "loam",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:39.437820",
+    "master_name": "ML Model",
+    "duplicate_name": "ML model",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:33:13.954941",
+    "master_name": "MUSLE",
+    "duplicate_name": "USLE",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:33:17.797290",
+    "master_name": "MUSLE model",
+    "duplicate_name": "USLE model",
+    "similarity_score": 95.23809523809523,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:33:21.771024",
+    "master_name": "MUSLE model",
+    "duplicate_name": "RUSLE Model",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:33:25.777546",
+    "master_name": "MUSLE model",
+    "duplicate_name": "RUSLE model",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:40.670554",
+    "master_name": "Mean Annual Precipitation",
+    "duplicate_name": "mean annual precipitation",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:41.894558",
+    "master_name": "Mean Annual Precipitation",
+    "duplicate_name": "annual precipitation",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:43.135906",
+    "master_name": "Mean erosion",
+    "duplicate_name": "mean erosion",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:44.267308",
+    "master_name": "Minimum tillage",
+    "duplicate_name": "minimum tillage",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:33:45.396697",
+    "master_name": "Modified Universal Soil Loss Equation",
+    "duplicate_name": "Revised Universal Soil Loss Equation",
+    "similarity_score": 87.67123287671232,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:33:49.473441",
+    "master_name": "Modified Universal Soil Loss Equation",
+    "duplicate_name": "Revised Universal soil loss equation",
+    "similarity_score": 87.67123287671232,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:33:53.716762",
+    "master_name": "Modified Universal Soil Loss Equation",
+    "duplicate_name": "revised universal soil loss equation",
+    "similarity_score": 87.67123287671232,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:33:57.713069",
+    "master_name": "Modified Universal Soil Loss Equation",
+    "duplicate_name": "Universal Soil Loss Equation",
+    "similarity_score": 86.15384615384616,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:45.520058",
+    "master_name": "Mudslide distance",
+    "duplicate_name": "Mudslide distance (MDe)",
+    "similarity_score": 85.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:46.736863",
+    "master_name": "NLDAS-2 SM product",
+    "duplicate_name": "NLDAS-2 SM products",
+    "similarity_score": 97.2972972972973,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:48.605653",
+    "master_name": "No Data",
+    "duplicate_name": "No data",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:49.862382",
+    "master_name": "No-till practice",
+    "duplicate_name": "no-till practice",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:51.130573",
+    "master_name": "No-till practice",
+    "duplicate_name": "no-tillage practice",
+    "similarity_score": 91.42857142857143,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:52.381525",
+    "master_name": "No-till practice",
+    "duplicate_name": "no-tillage practices",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:34:25.116480",
+    "master_name": "Northern China",
+    "duplicate_name": "Southern China",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:34:29.066211",
+    "master_name": "Northern China",
+    "duplicate_name": "southern China",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:53.623180",
+    "master_name": "P Factor",
+    "duplicate_name": "P factor",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:34:37.043722",
+    "master_name": "P Factor",
+    "duplicate_name": "R factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:34:40.974121",
+    "master_name": "P Factor",
+    "duplicate_name": "S factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:34:45.178787",
+    "master_name": "P factor",
+    "duplicate_name": "R factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:34:49.122257",
+    "master_name": "P factor",
+    "duplicate_name": "S factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:34:53.240591",
+    "master_name": "P factor values",
+    "duplicate_name": "R factor value",
+    "similarity_score": 89.65517241379311,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:34:57.149158",
+    "master_name": "P factor values",
+    "duplicate_name": "R-factor values",
+    "similarity_score": 86.66666666666667,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:35:01.286358",
+    "master_name": "P-factor",
+    "duplicate_name": "R-Factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:35:05.173294",
+    "master_name": "P-factor",
+    "duplicate_name": "R-factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:35:09.153851",
+    "master_name": "Panagos et al. (2015d)",
+    "duplicate_name": "Panagos et al. (2017)",
+    "similarity_score": 93.02325581395348,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:54.856111",
+    "master_name": "Pearson Correlation",
+    "duplicate_name": "Pearson Correlation (R)",
+    "similarity_score": 90.47619047619048,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:56.101568",
+    "master_name": "Plan Curvature",
+    "duplicate_name": "planform curvature",
+    "similarity_score": 87.5,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:35:21.008509",
+    "master_name": "R factor",
+    "duplicate_name": "R factors",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:35:24.946682",
+    "master_name": "R factor",
+    "duplicate_name": "S factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:35:29.186419",
+    "master_name": "R factors",
+    "duplicate_name": "factors",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:57.349923",
+    "master_name": "R-Factor",
+    "duplicate_name": "R-factor",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:21:59.275796",
+    "master_name": "R-factor equation",
+    "duplicate_name": "R-factor equations",
+    "similarity_score": 97.14285714285714,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:35:41.179965",
+    "master_name": "RUSLE",
+    "duplicate_name": "USLE",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:00.417161",
+    "master_name": "RUSLE Model",
+    "duplicate_name": "RUSLE model",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:35:49.275250",
+    "master_name": "RUSLE Model",
+    "duplicate_name": "USLE model",
+    "similarity_score": 95.23809523809523,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:35:53.156840",
+    "master_name": "RUSLE R-Factor",
+    "duplicate_name": "RUSLE factors",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:35:57.099124",
+    "master_name": "RUSLE model",
+    "duplicate_name": "USLE model",
+    "similarity_score": 95.23809523809523,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:01.665341",
+    "master_name": "Rainfall",
+    "duplicate_name": "rainfall",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:02.906802",
+    "master_name": "Rainfall erosivity",
+    "duplicate_name": "rainfall erosivity",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:36:08.818110",
+    "master_name": "Rainfall erosivity",
+    "duplicate_name": "rainfall erosivity map",
+    "similarity_score": 90.0,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:04.134631",
+    "master_name": "Rainfall erosivity",
+    "duplicate_name": "rainfall erosivity index",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:05.366987",
+    "master_name": "Rainfall gauging stations",
+    "duplicate_name": "rainfall gauging stations",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:06.634161",
+    "master_name": "Random Forest",
+    "duplicate_name": "random forest",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:07.875206",
+    "master_name": "Random Forest",
+    "duplicate_name": "Random Forests",
+    "similarity_score": 96.2962962962963,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:09.650488",
+    "master_name": "Random Forest",
+    "duplicate_name": "random forests",
+    "similarity_score": 96.2962962962963,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:36:35.044430",
+    "master_name": "Random Forests",
+    "duplicate_name": "random forests",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:36:38.946389",
+    "master_name": "Random Forests",
+    "duplicate_name": "random forest",
+    "similarity_score": 96.2962962962963,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:11.386886",
+    "master_name": "Region",
+    "duplicate_name": "regions",
+    "similarity_score": 92.3076923076923,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:12.520976",
+    "master_name": "Revised Universal Soil Loss Equation",
+    "duplicate_name": "Revised Universal soil loss equation",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:13.833847",
+    "master_name": "Revised Universal Soil Loss Equation",
+    "duplicate_name": "revised universal soil loss equation",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:15.063114",
+    "master_name": "Revised Universal Soil Loss Equation",
+    "duplicate_name": "Revised Universal Soil Loss Equation (RUSLE)",
+    "similarity_score": 90.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:37:01.485964",
+    "master_name": "Revised Universal Soil Loss Equation",
+    "duplicate_name": "Revised Universal Soil Loss Equation version 2",
+    "similarity_score": 87.8048780487805,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:37:05.535962",
+    "master_name": "Revised Universal Soil Loss Equation",
+    "duplicate_name": "Universal Soil Loss Equation",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:37:09.392707",
+    "master_name": "Revised Universal Soil Loss Equation (RUSLE)",
+    "duplicate_name": "Revised Universal soil loss equation",
+    "similarity_score": 90.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:37:13.267791",
+    "master_name": "Revised Universal Soil Loss Equation (RUSLE)",
+    "duplicate_name": "revised universal soil loss equation",
+    "similarity_score": 90.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:37:17.166132",
+    "master_name": "Revised Universal Soil Loss Equation (RUSLE)",
+    "duplicate_name": "Universal Soil Loss Equation (USLE)",
+    "similarity_score": 88.60759493670886,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:37:21.068236",
+    "master_name": "Revised Universal Soil Loss Equation version 2",
+    "duplicate_name": "Revised Universal soil loss equation",
+    "similarity_score": 87.8048780487805,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:37:25.022340",
+    "master_name": "Revised Universal Soil Loss Equation version 2",
+    "duplicate_name": "revised universal soil loss equation",
+    "similarity_score": 87.8048780487805,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:37:29.006535",
+    "master_name": "Revised Universal soil loss equation",
+    "duplicate_name": "revised universal soil loss equation",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:37:32.857815",
+    "master_name": "Revised Universal soil loss equation",
+    "duplicate_name": "Universal Soil Loss Equation",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:18.052584",
+    "master_name": "Rill erosion",
+    "duplicate_name": "rill erosion",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:37:40.706765",
+    "master_name": "River bank",
+    "duplicate_name": "river basin",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:19.872889",
+    "master_name": "Rivers",
+    "duplicate_name": "rivers",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:21.093127",
+    "master_name": "Road",
+    "duplicate_name": "road",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:22.345232",
+    "master_name": "Road",
+    "duplicate_name": "roads",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:23.590480",
+    "master_name": "Roughness",
+    "duplicate_name": "roughness",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:24.828935",
+    "master_name": "Runoff",
+    "duplicate_name": "runoff",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:38:04.081684",
+    "master_name": "S factor",
+    "duplicate_name": "factors",
+    "similarity_score": 93.33333333333333,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:26.053235",
+    "master_name": "SLOPE",
+    "duplicate_name": "Slope",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:27.163890",
+    "master_name": "SLOPE",
+    "duplicate_name": "slope",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:28.490467",
+    "master_name": "SLOPE",
+    "duplicate_name": "slopes",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:29.737846",
+    "master_name": "SMZ",
+    "duplicate_name": "SMZs",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:31.476544",
+    "master_name": "SWIR reflectance",
+    "duplicate_name": "T-SWIR reflectance",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:32.707279",
+    "master_name": "Sand",
+    "duplicate_name": "sand",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:33.853525",
+    "master_name": "Scrub land",
+    "duplicate_name": "scrub land",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:35.082924",
+    "master_name": "Sheet erosion",
+    "duplicate_name": "sheet erosion",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:36.331425",
+    "master_name": "Shui Cheng County",
+    "duplicate_name": "Shui cheng city",
+    "similarity_score": 87.5,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:37.640948",
+    "master_name": "Silt",
+    "duplicate_name": "silt",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:38.869915",
+    "master_name": "Skid Trail",
+    "duplicate_name": "skid trail",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:40.147761",
+    "master_name": "Skid Trail",
+    "duplicate_name": "skid trails",
+    "similarity_score": 95.23809523809523,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:38:55.967254",
+    "master_name": "Slope",
+    "duplicate_name": "slope",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:38:59.799017",
+    "master_name": "Slope",
+    "duplicate_name": "slopes",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:42.489491",
+    "master_name": "Slope steepness (S factor)",
+    "duplicate_name": "slope-steepness factor (S)",
+    "similarity_score": 92.3076923076923,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:43.724143",
+    "master_name": "Slope steepness (S factor)",
+    "duplicate_name": "slope-steepness factor",
+    "similarity_score": 87.5,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:45.152022",
+    "master_name": "Soil",
+    "duplicate_name": "soil",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:46.380808",
+    "master_name": "Soil",
+    "duplicate_name": "Soils",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:47.833956",
+    "master_name": "Soil Erosion",
+    "duplicate_name": "Soil erosion",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:49.096200",
+    "master_name": "Soil Erosion",
+    "duplicate_name": "soil erosion",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:39:27.641958",
+    "master_name": "Soil Erosion",
+    "duplicate_name": "red soil erosion",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:50.331613",
+    "master_name": "Soil Erosion Control Practices",
+    "duplicate_name": "soil erosion control practices",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:39:35.564997",
+    "master_name": "Soil Erosion Susceptibility",
+    "duplicate_name": "Soil erosion susceptibility",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:39:39.550966",
+    "master_name": "Soil Erosion Susceptibility",
+    "duplicate_name": "soil erosion susceptibility",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:39:43.398241",
+    "master_name": "Soil Erosion Susceptibility",
+    "duplicate_name": "soil susceptibility to erosion",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:39:47.307922",
+    "master_name": "Soil Erosion Susceptibility",
+    "duplicate_name": "susceptibility of soil to erosion",
+    "similarity_score": 90.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:53.082917",
+    "master_name": "Soil Properties",
+    "duplicate_name": "soil properties",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:54.300264",
+    "master_name": "Soil Properties",
+    "duplicate_name": "soil property",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:55.550002",
+    "master_name": "Soil Type",
+    "duplicate_name": "soil type",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:56.804489",
+    "master_name": "Soil Type",
+    "duplicate_name": "soil types",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:40:07.795679",
+    "master_name": "Soil erosion",
+    "duplicate_name": "soil erosion",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:40:11.875098",
+    "master_name": "Soil erosion",
+    "duplicate_name": "red soil erosion",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:58.262421",
+    "master_name": "Soil erosion modeling",
+    "duplicate_name": "soil erosion modelling",
+    "similarity_score": 97.67441860465115,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:22:59.504817",
+    "master_name": "Soil erosion modeling",
+    "duplicate_name": "soil erosion model",
+    "similarity_score": 92.3076923076923,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:00.800848",
+    "master_name": "Soil erosion modeling",
+    "duplicate_name": "soil erosion models",
+    "similarity_score": 90.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:40:28.008587",
+    "master_name": "Soil erosion modeling",
+    "duplicate_name": "seasonal erosion modelling",
+    "similarity_score": 85.1063829787234,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:02.674536",
+    "master_name": "Soil erosion potential",
+    "duplicate_name": "potential soil erosion",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:03.907933",
+    "master_name": "Soil erosion potential",
+    "duplicate_name": "soil erosion potential",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:05.158833",
+    "master_name": "Soil erosion potential",
+    "duplicate_name": "erosion potentiality",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:06.412544",
+    "master_name": "Soil erosion risk",
+    "duplicate_name": "soil erosion risk",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:07.667354",
+    "master_name": "Soil erosion risk",
+    "duplicate_name": "soil erosion risks",
+    "similarity_score": 97.14285714285714,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:08.912444",
+    "master_name": "Soil erosion risk",
+    "duplicate_name": "risk of soil erosion",
+    "similarity_score": 91.89189189189189,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:40:56.449960",
+    "master_name": "Soil erosion risk",
+    "duplicate_name": "soil erosion rates",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:41:00.382825",
+    "master_name": "Soil erosion risk",
+    "duplicate_name": "soil erosion risk zones",
+    "similarity_score": 85.0,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:41:04.684813",
+    "master_name": "Soil erosion susceptibility",
+    "duplicate_name": "soil erosion susceptibility",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:41:08.635854",
+    "master_name": "Soil erosion susceptibility",
+    "duplicate_name": "soil susceptibility to erosion",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:41:13.413964",
+    "master_name": "Soil erosion susceptibility",
+    "duplicate_name": "susceptibility of soil to erosion",
+    "similarity_score": 90.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:10.826445",
+    "master_name": "Soil loss",
+    "duplicate_name": "soil loss",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:41:21.991469",
+    "master_name": "Soils",
+    "duplicate_name": "soil",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:12.314276",
+    "master_name": "Southern China",
+    "duplicate_name": "southern China",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:14.204484",
+    "master_name": "Southwest mountain area",
+    "duplicate_name": "southwest mountain area",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:15.445564",
+    "master_name": "Spatial Location",
+    "duplicate_name": "Spatial location",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:16.579275",
+    "master_name": "Spatial Location",
+    "duplicate_name": "spatial location",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:41:42.424926",
+    "master_name": "Spatial location",
+    "duplicate_name": "spatial location",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:18.052421",
+    "master_name": "Stream Order",
+    "duplicate_name": "Stream order",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:19.158804",
+    "master_name": "Stream Order",
+    "duplicate_name": "stream order",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:41:54.621810",
+    "master_name": "Stream order",
+    "duplicate_name": "stream order",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:20.625453",
+    "master_name": "Streamside Management Zones",
+    "duplicate_name": "streamside management zones (SMZs)",
+    "similarity_score": 88.52459016393442,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:21.879532",
+    "master_name": "Sunnhemp",
+    "duplicate_name": "sunnhemp",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:23.096872",
+    "master_name": "Support Vector Machine",
+    "duplicate_name": "support vector machine model",
+    "similarity_score": 88.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:42:11.106127",
+    "master_name": "Surface Curvature",
+    "duplicate_name": "Surface Curvature (SFC)",
+    "similarity_score": 85.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:25.455437",
+    "master_name": "Surface Roughness (SRS)",
+    "duplicate_name": "surface roughness",
+    "similarity_score": 85.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:26.702865",
+    "master_name": "Terrain Area",
+    "duplicate_name": "terrain area",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:27.951022",
+    "master_name": "Terrain Area",
+    "duplicate_name": "terrain areas",
+    "similarity_score": 96.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:29.200063",
+    "master_name": "Three Gorges Area",
+    "duplicate_name": "Three Gorges area",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:30.447714",
+    "master_name": "Three Gorges Reservoir Area",
+    "duplicate_name": "Three Gorges Reservoir area",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:31.687284",
+    "master_name": "Three Gorges Reservoir Area",
+    "duplicate_name": "Three Gorges reservoir area",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:32.951990",
+    "master_name": "Three Gorges Reservoir Area",
+    "duplicate_name": "Three Gorges Reservoir area, China",
+    "similarity_score": 88.52459016393442,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:34.170439",
+    "master_name": "Three Gorges Reservoir Area",
+    "duplicate_name": "Three Gorges Reservoir, China",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:42:47.431271",
+    "master_name": "Three Gorges Reservoir area",
+    "duplicate_name": "Three Gorges reservoir area",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:42:51.284378",
+    "master_name": "Three Gorges Reservoir area",
+    "duplicate_name": "Three Gorges Reservoir area, China",
+    "similarity_score": 88.52459016393442,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:42:55.756576",
+    "master_name": "Three Gorges Reservoir area",
+    "duplicate_name": "Three Gorges Reservoir, China",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:43:00.069905",
+    "master_name": "Three Gorges Reservoir area, China",
+    "duplicate_name": "Three Gorges Reservoir, China",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:43:03.950746",
+    "master_name": "Three Gorges Reservoir area, China",
+    "duplicate_name": "Three Gorges reservoir area",
+    "similarity_score": 88.52459016393442,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:43:08.062287",
+    "master_name": "Three Gorges Reservoir, China",
+    "duplicate_name": "Three Gorges reservoir area",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:37.821567",
+    "master_name": "Topographic Features",
+    "duplicate_name": "topographic feature",
+    "similarity_score": 97.43589743589743,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:39.067867",
+    "master_name": "Topographic Features",
+    "duplicate_name": "topographical features",
+    "similarity_score": 95.23809523809523,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:43:20.553739",
+    "master_name": "Topographic Features",
+    "duplicate_name": "topographic factors",
+    "similarity_score": 87.17948717948718,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:40.315255",
+    "master_name": "Topographic Wetness Index",
+    "duplicate_name": "Topographic wetness index",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:41.571812",
+    "master_name": "UAV",
+    "duplicate_name": "UAVs",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:43:32.407492",
+    "master_name": "USLE",
+    "duplicate_name": "Use",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:42.696249",
+    "master_name": "USLE model",
+    "duplicate_name": "USLE modeling",
+    "similarity_score": 86.95652173913044,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:43.950635",
+    "master_name": "Universal Soil Loss Equation",
+    "duplicate_name": "Universal Soil Loss Equation (USLE)",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:43:45.366058",
+    "master_name": "Universal Soil Loss Equation",
+    "duplicate_name": "revised universal soil loss equation",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:45.801297",
+    "master_name": "Upper Mahaweli Catchment Area (UMCA)",
+    "duplicate_name": "upper Mahaweli catchment area",
+    "similarity_score": 89.23076923076923,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:47.046406",
+    "master_name": "Vegetation cover",
+    "duplicate_name": "vegetation cover",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:48.278833",
+    "master_name": "Vegetation cover",
+    "duplicate_name": "vegetation covers",
+    "similarity_score": 96.96969696969697,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:44:01.884118",
+    "master_name": "Vegetation cover",
+    "duplicate_name": "low vegetation cover",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:49.533318",
+    "master_name": "Water body",
+    "duplicate_name": "water body",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:50.769820",
+    "master_name": "Watershed",
+    "duplicate_name": "watershed",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:52.000205",
+    "master_name": "Watershed",
+    "duplicate_name": "watersheds",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:53.248763",
+    "master_name": "Zoned tillage",
+    "duplicate_name": "zoned tillage",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:44:22.223942",
+    "master_name": "administrative area",
+    "duplicate_name": "administrative areas",
+    "similarity_score": 97.43589743589743,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:44:26.087825",
+    "master_name": "alpine soil water infiltrability",
+    "duplicate_name": "soil water infiltrability",
+    "similarity_score": 87.71929824561404,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:44:29.866148",
+    "master_name": "annual precipitation",
+    "duplicate_name": "mean annual precipitation",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:44:33.670722",
+    "master_name": "annual rainfall",
+    "duplicate_name": "mean annual rainfall",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:54.974015",
+    "master_name": "annual soil loss",
+    "duplicate_name": "mean annual soil loss",
+    "similarity_score": 86.48648648648648,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:44:42.253900",
+    "master_name": "artificial neural network models",
+    "duplicate_name": "artificial neural networks",
+    "similarity_score": 86.20689655172413,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:57.155042",
+    "master_name": "assessment of soil erosion",
+    "duplicate_name": "assessment of soil erosion rates",
+    "similarity_score": 89.65517241379311,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:58.395512",
+    "master_name": "assessment of soil erosion",
+    "duplicate_name": "soil erosion risk assessment",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:44:54.129775",
+    "master_name": "assessment of soil erosion rates",
+    "duplicate_name": "soil erosion risk assessment",
+    "similarity_score": 86.66666666666667,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:23:59.641887",
+    "master_name": "basin",
+    "duplicate_name": "basins",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:00.889295",
+    "master_name": "biological method",
+    "duplicate_name": "biological methods",
+    "similarity_score": 97.14285714285714,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:02.122964",
+    "master_name": "catch crop",
+    "duplicate_name": "catch crops",
+    "similarity_score": 95.23809523809523,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:45:09.848070",
+    "master_name": "catchment",
+    "duplicate_name": "catchments",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:03.364991",
+    "master_name": "characterization factor data",
+    "duplicate_name": "characterization factors",
+    "similarity_score": 88.46153846153845,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:45:18.048201",
+    "master_name": "climate classification",
+    "duplicate_name": "image classification",
+    "similarity_score": 90.47619047619048,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:45:21.969559",
+    "master_name": "clover",
+    "duplicate_name": "cover",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:45:25.763902",
+    "master_name": "cold spot",
+    "duplicate_name": "cold spots",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:04.847800",
+    "master_name": "conservation methods",
+    "duplicate_name": "soil conservation methods",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:06.160240",
+    "master_name": "conservation practice",
+    "duplicate_name": "conservation practices",
+    "similarity_score": 97.67441860465115,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:07.995371",
+    "master_name": "conservation practice",
+    "duplicate_name": "soil conservation practice",
+    "similarity_score": 89.36170212765957,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:45:41.586393",
+    "master_name": "conservation practice",
+    "duplicate_name": "poor conservation practices",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:45:45.640748",
+    "master_name": "conservation practices",
+    "duplicate_name": "soil conservation practice",
+    "similarity_score": 91.66666666666666,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:45:49.448968",
+    "master_name": "conservation practices",
+    "duplicate_name": "poor conservation practices",
+    "similarity_score": 89.79591836734694,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:45:53.200864",
+    "master_name": "conservation tillage",
+    "duplicate_name": "tillage operation",
+    "similarity_score": 86.48648648648648,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:45:57.258850",
+    "master_name": "conventional tillage with straw removal",
+    "duplicate_name": "conventional tillage with straw returning",
+    "similarity_score": 85.0,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:46:01.509827",
+    "master_name": "convergence of flow",
+    "duplicate_name": "divergence of flow",
+    "similarity_score": 86.48648648648648,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:46:05.410927",
+    "master_name": "convergences of downslope water fluxes",
+    "duplicate_name": "divergences of downslope water fluxes",
+    "similarity_score": 93.33333333333333,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:09.494723",
+    "master_name": "cover and management",
+    "duplicate_name": "cover management",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:10.740078",
+    "master_name": "cover and management",
+    "duplicate_name": "cover and management factor",
+    "similarity_score": 85.1063829787234,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:46:17.271427",
+    "master_name": "cover and management factor",
+    "duplicate_name": "cover and management factor (C)",
+    "similarity_score": 93.10344827586206,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:46:21.984029",
+    "master_name": "cover and management factor",
+    "duplicate_name": "cover management factor",
+    "similarity_score": 92.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:12.408125",
+    "master_name": "cover and management factor (C)",
+    "duplicate_name": "cover management factor",
+    "similarity_score": 85.18518518518519,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:13.678166",
+    "master_name": "cover crop",
+    "duplicate_name": "cover crops",
+    "similarity_score": 95.23809523809523,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:46:33.520497",
+    "master_name": "crop management practices",
+    "duplicate_name": "management practices",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:14.930335",
+    "master_name": "crop management practices",
+    "duplicate_name": "management practice",
+    "similarity_score": 86.36363636363636,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:16.175790",
+    "master_name": "cross ridge tillage",
+    "duplicate_name": "cross-ridge tillage",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:18.145310",
+    "master_name": "cultivation of grass",
+    "duplicate_name": "grass cultivation",
+    "similarity_score": 91.89189189189189,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:19.669655",
+    "master_name": "deep learning model",
+    "duplicate_name": "deep learning models",
+    "similarity_score": 97.43589743589743,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:46:53.750622",
+    "master_name": "deforestation",
+    "duplicate_name": "reforestation",
+    "similarity_score": 92.3076923076923,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:21.007827",
+    "master_name": "dense vegetation",
+    "duplicate_name": "vegetation density",
+    "similarity_score": 88.23529411764706,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:22.135888",
+    "master_name": "detachment of soil",
+    "duplicate_name": "soil detachment",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:47:05.657921",
+    "master_name": "drainage density",
+    "duplicate_name": "high drainage density",
+    "similarity_score": 86.48648648648648,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:23.400810",
+    "master_name": "equation",
+    "duplicate_name": "equations",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:47:13.761410",
+    "master_name": "erosion control",
+    "duplicate_name": "wind erosion control",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:47:17.591290",
+    "master_name": "erosion estimation",
+    "duplicate_name": "soil erosion estimation",
+    "similarity_score": 87.8048780487805,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:47:22.174634",
+    "master_name": "erosion potentiality",
+    "duplicate_name": "potential soil erosion",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:47:26.126140",
+    "master_name": "erosion potentiality",
+    "duplicate_name": "soil erosion potential",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:25.515899",
+    "master_name": "erosion process",
+    "duplicate_name": "erosion processes",
+    "similarity_score": 93.75,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:26.745905",
+    "master_name": "erosion process",
+    "duplicate_name": "soil erosion process",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:47:37.384290",
+    "master_name": "erosion processes",
+    "duplicate_name": "soil erosion process",
+    "similarity_score": 86.48648648648648,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:28.794946",
+    "master_name": "erosion rate",
+    "duplicate_name": "erosion rates",
+    "similarity_score": 96.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:47:45.157574",
+    "master_name": "erosion rate",
+    "duplicate_name": "water erosion",
+    "similarity_score": 88.0,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:47:49.134296",
+    "master_name": "erosion rate",
+    "duplicate_name": "moderate erosion",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:47:52.983524",
+    "master_name": "erosion rates",
+    "duplicate_name": "soil erosion rate",
+    "similarity_score": 86.66666666666667,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:30.285122",
+    "master_name": "evapotranspiration fluxes",
+    "duplicate_name": "evapotranspiration losses",
+    "similarity_score": 88.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:48:00.830898",
+    "master_name": "extensive agriculture",
+    "duplicate_name": "intensive agriculture",
+    "similarity_score": 90.47619047619048,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:48:04.686469",
+    "master_name": "field-based method",
+    "duplicate_name": "field-based methods",
+    "similarity_score": 97.2972972972973,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:31.797561",
+    "master_name": "flow of water",
+    "duplicate_name": "water flow",
+    "similarity_score": 86.95652173913044,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:48:12.853413",
+    "master_name": "flow of water",
+    "duplicate_name": "more water flow",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:33.010908",
+    "master_name": "geologic disaster",
+    "duplicate_name": "geological disaster",
+    "similarity_score": 94.44444444444444,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:34.298812",
+    "master_name": "geologic disaster",
+    "duplicate_name": "geological disasters",
+    "similarity_score": 91.89189189189189,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:48:24.629967",
+    "master_name": "geological disaster",
+    "duplicate_name": "geological disasters",
+    "similarity_score": 97.43589743589743,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:48:28.540230",
+    "master_name": "harvest site",
+    "duplicate_name": "harvest sites",
+    "similarity_score": 96.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:48:32.251211",
+    "master_name": "heavy soil erosion",
+    "duplicate_name": "mean soil erosion",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:36.291913",
+    "master_name": "heightened erosion",
+    "duplicate_name": "heightened soil erosion",
+    "similarity_score": 87.8048780487805,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:37.541008",
+    "master_name": "high erosion potential",
+    "duplicate_name": "high potential erosion rate",
+    "similarity_score": 89.79591836734694,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:48:44.247504",
+    "master_name": "high potential erosion rate",
+    "duplicate_name": "highest potential erosion rate",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:48:48.170327",
+    "master_name": "higher erosion rates",
+    "duplicate_name": "highest erosion rates",
+    "similarity_score": 92.6829268292683,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:48:52.029169",
+    "master_name": "higher erosion rates",
+    "duplicate_name": "highest erosion rate",
+    "similarity_score": 90.0,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:48:55.930315",
+    "master_name": "higher susceptibility to erosion",
+    "duplicate_name": "susceptibility to erosion",
+    "similarity_score": 87.71929824561404,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:40.055120",
+    "master_name": "higher susceptibility to erosion",
+    "duplicate_name": "soil susceptibility to erosion",
+    "similarity_score": 87.09677419354838,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:49:03.921609",
+    "master_name": "highest average CP factor",
+    "duplicate_name": "lowest average CP factor",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:41.305454",
+    "master_name": "highest erosion rate",
+    "duplicate_name": "highest erosion rates",
+    "similarity_score": 97.5609756097561,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:49:11.490878",
+    "master_name": "highest erosion rate",
+    "duplicate_name": "highest mean erosion rate",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:42.592970",
+    "master_name": "highest erosion rate",
+    "duplicate_name": "highest soil erosion rate",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:49:19.576569",
+    "master_name": "highest erosion rates",
+    "duplicate_name": "highest soil erosion rate",
+    "similarity_score": 91.30434782608697,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:49:23.517879",
+    "master_name": "highest erosion rates",
+    "duplicate_name": "highest mean erosion rate",
+    "similarity_score": 86.95652173913044,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:49:27.452321",
+    "master_name": "highest mean erosion rate",
+    "duplicate_name": "lowest mean erosion rate",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:49:31.362039",
+    "master_name": "hot spot",
+    "duplicate_name": "hot spots",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:44.342417",
+    "master_name": "infiltration rate",
+    "duplicate_name": "rate of infiltration",
+    "similarity_score": 91.89189189189189,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:49:39.294644",
+    "master_name": "inland development",
+    "duplicate_name": "outland development",
+    "similarity_score": 86.48648648648648,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:49:43.230787",
+    "master_name": "inland development",
+    "duplicate_name": "plant development",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:45.628222",
+    "master_name": "inter-rill erosion",
+    "duplicate_name": "interrill erosion",
+    "similarity_score": 97.14285714285714,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:49:50.945462",
+    "master_name": "land cover",
+    "duplicate_name": "plant cover",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:46.874034",
+    "master_name": "land cover type",
+    "duplicate_name": "land cover types",
+    "similarity_score": 96.7741935483871,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:49:58.813786",
+    "master_name": "land cover type",
+    "duplicate_name": "plant cover type",
+    "similarity_score": 90.32258064516128,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:50:02.908728",
+    "master_name": "land cover types",
+    "duplicate_name": "plant cover type",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:48.123344",
+    "master_name": "land management",
+    "duplicate_name": "land use management",
+    "similarity_score": 88.23529411764706,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:49.374318",
+    "master_name": "land use change",
+    "duplicate_name": "land use changes",
+    "similarity_score": 96.7741935483871,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:51.256700",
+    "master_name": "land use change",
+    "duplicate_name": "land-use change",
+    "similarity_score": 93.33333333333333,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:50:18.419295",
+    "master_name": "land use changes",
+    "duplicate_name": "land-use change",
+    "similarity_score": 90.32258064516128,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:52.745587",
+    "master_name": "landslide",
+    "duplicate_name": "landslides",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:53.986656",
+    "master_name": "landslide disaster susceptibility assessment",
+    "duplicate_name": "landslide susceptibility assessment",
+    "similarity_score": 88.60759493670886,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:50:30.425962",
+    "master_name": "landslide susceptibility",
+    "duplicate_name": "landslide susceptibility mapping",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:55.250172",
+    "master_name": "landslide susceptibility mapping",
+    "duplicate_name": "landslide susceptibility modeling",
+    "similarity_score": 89.23076923076923,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:56.495026",
+    "master_name": "landslide susceptibility prediction",
+    "duplicate_name": "prediction of landslide susceptibility",
+    "similarity_score": 95.89041095890411,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:50:42.026489",
+    "master_name": "loading deck",
+    "duplicate_name": "loading decks",
+    "similarity_score": 96.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:50:45.912802",
+    "master_name": "low vegetation cover",
+    "duplicate_name": "vegetation cover",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:50:49.782842",
+    "master_name": "low vegetation cover",
+    "duplicate_name": "vegetation covers",
+    "similarity_score": 86.48648648648648,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:50:53.635794",
+    "master_name": "lower mean erosion rates",
+    "duplicate_name": "lowest mean erosion rate",
+    "similarity_score": 91.66666666666666,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:58.048022",
+    "master_name": "lowest erosion rate",
+    "duplicate_name": "lowest erosion rates",
+    "similarity_score": 97.43589743589743,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:24:59.375446",
+    "master_name": "lowest erosion rate",
+    "duplicate_name": "lowest mean erosion rate",
+    "similarity_score": 88.37209302325581,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:51:05.226873",
+    "master_name": "lowest erosion rates",
+    "duplicate_name": "lowest mean erosion rate",
+    "similarity_score": 86.36363636363636,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:51:09.121959",
+    "master_name": "management practice",
+    "duplicate_name": "management practices",
+    "similarity_score": 97.43589743589743,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:51:12.997592",
+    "master_name": "management practices",
+    "duplicate_name": "straw management practices",
+    "similarity_score": 86.95652173913044,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:51:16.979513",
+    "master_name": "mean soil erosion",
+    "duplicate_name": "soil erosion model",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:01.645672",
+    "master_name": "mean soil erosion",
+    "duplicate_name": "mean soil erosion value",
+    "similarity_score": 85.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:02.952756",
+    "master_name": "mechanical method",
+    "duplicate_name": "mechanical methods",
+    "similarity_score": 97.14285714285714,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:04.446822",
+    "master_name": "model prediction results",
+    "duplicate_name": "prediction results",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:05.733791",
+    "master_name": "monthly precipitation",
+    "duplicate_name": "monthly precipitation data",
+    "similarity_score": 89.36170212765957,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:07.023199",
+    "master_name": "monthly rainfall",
+    "duplicate_name": "monthly rainfall data",
+    "similarity_score": 86.48648648648648,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:51:40.906457",
+    "master_name": "no-till practice",
+    "duplicate_name": "no-tillage practice",
+    "similarity_score": 91.42857142857143,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:51:44.803771",
+    "master_name": "no-till practice",
+    "duplicate_name": "no-tillage practices",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:51:48.702106",
+    "master_name": "no-tillage practice",
+    "duplicate_name": "no-tillage practices",
+    "similarity_score": 97.43589743589743,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:09.035370",
+    "master_name": "nutrient",
+    "duplicate_name": "nutrients",
+    "similarity_score": 94.11764705882352,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:10.158914",
+    "master_name": "nutrient loss",
+    "duplicate_name": "nutrient losses",
+    "similarity_score": 92.85714285714286,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:12.070197",
+    "master_name": "oat",
+    "duplicate_name": "oats",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:52:04.810871",
+    "master_name": "p-values",
+    "duplicate_name": "z-values",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:52:08.645589",
+    "master_name": "percent ground cover",
+    "duplicate_name": "permanent ground cover",
+    "similarity_score": 90.47619047619048,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:13.287026",
+    "master_name": "plant cover",
+    "duplicate_name": "plant covers",
+    "similarity_score": 95.65217391304348,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:52:16.529479",
+    "master_name": "potential soil erosion",
+    "duplicate_name": "soil erosion potential",
+    "similarity_score": 100.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:14.789007",
+    "master_name": "precipitation intensity index",
+    "duplicate_name": "simple precipitation intensity index",
+    "similarity_score": 89.23076923076923,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:16.026297",
+    "master_name": "rain impacts",
+    "duplicate_name": "raindrop impacts",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:17.275518",
+    "master_name": "rain intensity",
+    "duplicate_name": "rainfall intensity",
+    "similarity_score": 87.5,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:52:32.403111",
+    "master_name": "raindrop impact",
+    "duplicate_name": "raindrop impacts",
+    "similarity_score": 96.7741935483871,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:19.027861",
+    "master_name": "rainfall and runoff erosivity factor",
+    "duplicate_name": "rainfall and runoff erosivity factor (R)",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:20.257388",
+    "master_name": "rainfall and runoff erosivity factor",
+    "duplicate_name": "rainfall-runoff erosivity factor",
+    "similarity_score": 91.17647058823529,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:52:44.308764",
+    "master_name": "rainfall and runoff erosivity factor (R)",
+    "duplicate_name": "rainfall-runoff erosivity factor",
+    "similarity_score": 86.11111111111111,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:52:48.426569",
+    "master_name": "rainfall erosivity",
+    "duplicate_name": "rainfall erosivity map",
+    "similarity_score": 90.0,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:52:52.757605",
+    "master_name": "rainfall erosivity",
+    "duplicate_name": "rainfall erosivity index",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:22.673805",
+    "master_name": "rainfall erosivity factor",
+    "duplicate_name": "rainfall erosivity factors",
+    "similarity_score": 98.0392156862745,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:23.911365",
+    "master_name": "rainfall erosivity factor",
+    "duplicate_name": "rainfall erosivity factor (R)",
+    "similarity_score": 92.5925925925926,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:53:04.841902",
+    "master_name": "rainfall erosivity factor",
+    "duplicate_name": "rainfall-runoff erosivity factor",
+    "similarity_score": 87.71929824561404,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:53:08.722064",
+    "master_name": "rainfall erosivity factor",
+    "duplicate_name": "rainfall erosivity map",
+    "similarity_score": 85.1063829787234,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:53:12.786698",
+    "master_name": "rainfall erosivity factor (R)",
+    "duplicate_name": "rainfall erosivity factors",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:53:16.642194",
+    "master_name": "rainfall erosivity factors",
+    "duplicate_name": "rainfall-runoff erosivity factor",
+    "similarity_score": 86.20689655172413,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:25.284938",
+    "master_name": "rainfall factor R",
+    "duplicate_name": "rainfall factors",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:53:24.482709",
+    "master_name": "rainfall intensities",
+    "duplicate_name": "rainfall intensity",
+    "similarity_score": 89.47368421052632,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:27.060328",
+    "master_name": "rainfall pattern",
+    "duplicate_name": "rainfall patterns",
+    "similarity_score": 96.96969696969697,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:28.348668",
+    "master_name": "rainfall regime",
+    "duplicate_name": "rainfall regimes",
+    "similarity_score": 96.7741935483871,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:53:36.459949",
+    "master_name": "random forest",
+    "duplicate_name": "random forests",
+    "similarity_score": 96.2962962962963,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:29.861622",
+    "master_name": "rate of runoff",
+    "duplicate_name": "runoff rate",
+    "similarity_score": 88.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:53:44.286301",
+    "master_name": "red soil erosion",
+    "duplicate_name": "reduce soil erosion",
+    "similarity_score": 91.42857142857143,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:53:48.200199",
+    "master_name": "red soil erosion",
+    "duplicate_name": "soil erosion rate",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:53:52.134642",
+    "master_name": "red soil erosion",
+    "duplicate_name": "soil erosion rates",
+    "similarity_score": 88.23529411764706,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:53:56.157574",
+    "master_name": "red soil erosion",
+    "duplicate_name": "soil erosion",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:53:59.912357",
+    "master_name": "red soil erosion",
+    "duplicate_name": "soil erosion hazard",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:31.092012",
+    "master_name": "rice straw mulch",
+    "duplicate_name": "rice-straw mulching",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:32.886030",
+    "master_name": "ridge tillage",
+    "duplicate_name": "ridges tillage",
+    "similarity_score": 96.2962962962963,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:34.132170",
+    "master_name": "rill",
+    "duplicate_name": "rills",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:54:15.778038",
+    "master_name": "risk of soil erosion",
+    "duplicate_name": "soil erosion risk",
+    "similarity_score": 91.89189189189189,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:54:19.707921",
+    "master_name": "risk of soil erosion",
+    "duplicate_name": "soil erosion risks",
+    "similarity_score": 89.47368421052632,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:54:23.578111",
+    "master_name": "road",
+    "duplicate_name": "roads",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:54:27.460573",
+    "master_name": "runoff rate",
+    "duplicate_name": "runoff rates",
+    "similarity_score": 95.65217391304348,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:54:31.998596",
+    "master_name": "runoff rate",
+    "duplicate_name": "runoff ratio",
+    "similarity_score": 86.95652173913044,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:36.383196",
+    "master_name": "sandy soil",
+    "duplicate_name": "sandy soils",
+    "similarity_score": 95.23809523809523,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:54:39.678263",
+    "master_name": "sandy soil",
+    "duplicate_name": "sandy topsoil",
+    "similarity_score": 86.95652173913044,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:54:43.587558",
+    "master_name": "seasonal erosion modelling",
+    "duplicate_name": "soil erosion modelling",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:54:47.498112",
+    "master_name": "sediment delivery",
+    "duplicate_name": "sediment delivery ratio",
+    "similarity_score": 85.0,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:37.588342",
+    "master_name": "sediment delivery ratio",
+    "duplicate_name": "sediment delivery ratio (SDR)",
+    "similarity_score": 88.46153846153845,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:54:55.186807",
+    "master_name": "sediment loads",
+    "duplicate_name": "sediment loss",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:54:59.125965",
+    "master_name": "sediment loads",
+    "duplicate_name": "sediment lost",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:38.848702",
+    "master_name": "sediment loss",
+    "duplicate_name": "sediment lost",
+    "similarity_score": 92.3076923076923,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:40.099650",
+    "master_name": "sediment yield",
+    "duplicate_name": "sediment yields",
+    "similarity_score": 96.55172413793103,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:55:11.162091",
+    "master_name": "site characteristics",
+    "duplicate_name": "slope characteristics",
+    "similarity_score": 87.8048780487805,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:55:15.059003",
+    "master_name": "skid trail",
+    "duplicate_name": "skid trails",
+    "similarity_score": 95.23809523809523,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:55:18.878480",
+    "master_name": "slope",
+    "duplicate_name": "slopes",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:41.960214",
+    "master_name": "slope steepness",
+    "duplicate_name": "slope-steepness",
+    "similarity_score": 93.33333333333333,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:55:26.799603",
+    "master_name": "slope's susceptibility to erosion",
+    "duplicate_name": "soil susceptibility to erosion",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:55:30.691219",
+    "master_name": "slope's susceptibility to erosion",
+    "duplicate_name": "susceptibility to erosion",
+    "similarity_score": 86.20689655172413,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:44.443854",
+    "master_name": "slope-length factor",
+    "duplicate_name": "slope-length factor (L)",
+    "similarity_score": 90.47619047619048,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:55:38.824022",
+    "master_name": "slope-steepness factor",
+    "duplicate_name": "slope-steepness factor (S)",
+    "similarity_score": 91.66666666666666,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:55:42.921444",
+    "master_name": "sloping croplands",
+    "duplicate_name": "sloping lands",
+    "similarity_score": 86.66666666666667,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:45.832829",
+    "master_name": "sloping farmland",
+    "duplicate_name": "sloping farmlands",
+    "similarity_score": 96.96969696969697,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:55:50.826314",
+    "master_name": "sloping farmland",
+    "duplicate_name": "sloping land",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:55:55.290452",
+    "master_name": "sloping farmlands",
+    "duplicate_name": "sloping lands",
+    "similarity_score": 86.66666666666667,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:47.335656",
+    "master_name": "sloping land",
+    "duplicate_name": "sloping lands",
+    "similarity_score": 96.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:03.437506",
+    "master_name": "soil detachment",
+    "duplicate_name": "soil detachment rate",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:48.460630",
+    "master_name": "soil erodibility factor",
+    "duplicate_name": "soil erodibility factor (K)",
+    "similarity_score": 92.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:10.934539",
+    "master_name": "soil erosion estimates",
+    "duplicate_name": "soil erosion estimation",
+    "similarity_score": 88.88888888888889,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:49.724967",
+    "master_name": "soil erosion estimates",
+    "duplicate_name": "soil erosion rates",
+    "similarity_score": 85.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:19.326375",
+    "master_name": "soil erosion loss",
+    "duplicate_name": "soil erosion process",
+    "similarity_score": 86.48648648648648,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:23.547392",
+    "master_name": "soil erosion loss",
+    "duplicate_name": "soil erosion risks",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:28.060389",
+    "master_name": "soil erosion model",
+    "duplicate_name": "soil erosion models",
+    "similarity_score": 97.2972972972973,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:32.092463",
+    "master_name": "soil erosion model",
+    "duplicate_name": "soil erosion modelling",
+    "similarity_score": 90.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:36.001231",
+    "master_name": "soil erosion modelling",
+    "duplicate_name": "soil erosion models",
+    "similarity_score": 87.8048780487805,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:39.874936",
+    "master_name": "soil erosion rate",
+    "duplicate_name": "soil erosion rates",
+    "similarity_score": 97.14285714285714,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:43.877298",
+    "master_name": "soil erosion rates",
+    "duplicate_name": "soil erosion risk",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:47.784424",
+    "master_name": "soil erosion risk",
+    "duplicate_name": "soil erosion risks",
+    "similarity_score": 97.14285714285714,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:51.771087",
+    "master_name": "soil erosion risk",
+    "duplicate_name": "soil erosion risk zones",
+    "similarity_score": 85.0,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:55.800028",
+    "master_name": "soil erosion susceptibility",
+    "duplicate_name": "soil susceptibility to erosion",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:56:59.782652",
+    "master_name": "soil erosion susceptibility",
+    "duplicate_name": "susceptibility of soil to erosion",
+    "similarity_score": 90.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:53.241780",
+    "master_name": "soil loss estimates",
+    "duplicate_name": "soil loss estimation",
+    "similarity_score": 87.17948717948718,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:55.191714",
+    "master_name": "soil loss rate",
+    "duplicate_name": "soil loss rates",
+    "similarity_score": 96.55172413793103,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:57:11.563269",
+    "master_name": "soil loss rate",
+    "duplicate_name": "soil loss ratio",
+    "similarity_score": 89.65517241379311,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:57:16.457150",
+    "master_name": "soil loss rates",
+    "duplicate_name": "soil loss ratio",
+    "similarity_score": 86.66666666666667,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:56.437649",
+    "master_name": "soil process",
+    "duplicate_name": "soil processes",
+    "similarity_score": 92.3076923076923,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:57:24.288611",
+    "master_name": "soil properties",
+    "duplicate_name": "soil property",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:57:28.133088",
+    "master_name": "soil susceptibility to erosion",
+    "duplicate_name": "susceptibility of soil to erosion",
+    "similarity_score": 95.23809523809523,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:57:31.966956",
+    "master_name": "soil susceptibility to erosion",
+    "duplicate_name": "susceptibility to erosion",
+    "similarity_score": 90.9090909090909,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:57:36.114188",
+    "master_name": "soil type",
+    "duplicate_name": "soil types",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:58.668915",
+    "master_name": "southeastern U.S.",
+    "duplicate_name": "southeastern US",
+    "similarity_score": 93.75,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:25:59.888826",
+    "master_name": "steep slope",
+    "duplicate_name": "steep slopes",
+    "similarity_score": 95.65217391304348,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:26:01.140957",
+    "master_name": "straw mulch",
+    "duplicate_name": "straw mulching",
+    "similarity_score": 88.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:26:02.375015",
+    "master_name": "support practice",
+    "duplicate_name": "support practices",
+    "similarity_score": 96.96969696969697,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:26:03.611295",
+    "master_name": "support practice factor (P)",
+    "duplicate_name": "support practice factors",
+    "similarity_score": 90.19607843137256,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:57:59.743400",
+    "master_name": "susceptibility of soil to erosion",
+    "duplicate_name": "susceptibility to erosion",
+    "similarity_score": 86.20689655172413,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:58:03.643538",
+    "master_name": "terracing",
+    "duplicate_name": "terrain",
+    "similarity_score": 87.5,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:58:07.524826",
+    "master_name": "terrain area",
+    "duplicate_name": "terrain areas",
+    "similarity_score": 96.0,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:58:11.334937",
+    "master_name": "tilled",
+    "duplicate_name": "untilled",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:58:15.242500",
+    "master_name": "tilled harvest categories",
+    "duplicate_name": "untilled harvest categories",
+    "similarity_score": 96.15384615384616,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:26:06.137766",
+    "master_name": "topographic factors",
+    "duplicate_name": "topographical factors",
+    "similarity_score": 95.0,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-31T10:26:07.253090",
+    "master_name": "topographic factors",
+    "duplicate_name": "topographical factor",
+    "similarity_score": 92.3076923076923,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:58:27.028957",
+    "master_name": "topographic feature",
+    "duplicate_name": "topographical features",
+    "similarity_score": 92.6829268292683,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:58:30.869348",
+    "master_name": "topographical factor",
+    "duplicate_name": "topographical factors",
+    "similarity_score": 97.5609756097561,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:58:34.753350",
+    "master_name": "topographical factor",
+    "duplicate_name": "topographical features",
+    "similarity_score": 85.71428571428572,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-30T22:58:38.565560",
+    "master_name": "topographical factors",
+    "duplicate_name": "topographical features",
+    "similarity_score": 88.37209302325581,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:26:08.980404",
+    "master_name": "tropical watershed",
+    "duplicate_name": "tropical watersheds",
+    "similarity_score": 97.2972972972973,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:58:47.133792",
+    "master_name": "vegetation cover",
+    "duplicate_name": "vegetation covers",
+    "similarity_score": 96.96969696969697,
+    "llm_confirmed": true,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:26:10.477889",
+    "master_name": "vulnerability of soil to erosion",
+    "duplicate_name": "vulnerable to soil erosion",
+    "similarity_score": 86.20689655172413,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  },
+  {
+    "timestamp": "2026-01-30T22:58:55.448353",
+    "master_name": "watershed",
+    "duplicate_name": "watersheds",
+    "similarity_score": 94.73684210526316,
+    "llm_confirmed": false,
+    "merged": false,
+    "reason": "Dry run - no merge performed"
+  },
+  {
+    "timestamp": "2026-01-31T10:26:11.752701",
+    "master_name": "z-value",
+    "duplicate_name": "z-values",
+    "similarity_score": 93.33333333333333,
+    "llm_confirmed": true,
+    "merged": true,
+    "reason": "Executed from log"
+  }
+]
