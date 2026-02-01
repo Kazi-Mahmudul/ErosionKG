@@ -32,7 +32,9 @@ ENV/
 # Vercel
 .vercel
 
-# Data files (optional - uncomment if you want to exclude from git)
-# api/data/raw_papers/*.pdf
-# api/data/extracted_chunks.json
-# api/data/merge_log.json
+# Data files    
+data/
+api/data/raw_papers/
+api/data/*.json
+api/data/*.pdf
+
