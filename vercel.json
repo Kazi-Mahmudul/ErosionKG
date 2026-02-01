@@ -2,7 +2,14 @@
     "rewrites": [
         {
             "source": "/api/:path*",
-            "destination": "/api/index"
+            "destination": "/api/index.py"
         }
-    ]
+    ],
+    "functions": {
+        "api/index.py": {
+            "maxDuration": 60,
+            "includeFiles": "api/**",
+            "excludeFiles": "api/data/**"
+        }
+    }
 }

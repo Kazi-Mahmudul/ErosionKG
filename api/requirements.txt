@@ -3,7 +3,6 @@ uvicorn==0.32.0
 python-dotenv==1.0.0
 neo4j==5.25.0
 llama-index-core==0.12.3
-llama-index-llms-gemini
 llama-index-embeddings-gemini
 llama-index-llms-groq
 llama-index-graph-stores-neo4j

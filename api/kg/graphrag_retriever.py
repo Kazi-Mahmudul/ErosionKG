@@ -11,7 +11,7 @@ from dataclasses import dataclass, field
 from dotenv import load_dotenv
 from neo4j import GraphDatabase
 
-from llama_index.llms.gemini import Gemini
+
 
 # Configuration
 load_dotenv()
