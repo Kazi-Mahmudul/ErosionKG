@@ -1,25 +1,38 @@
+# Next.js
+/.next/
+/out/
+node_modules/
+*.log
+.DS_Store
+
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Environment variables
-.env
-
-# Virtual Environment
-venv/
-env/
-.venv/
-
-# Distribution / Packaging
-build/
-dist/
+*.so
+.Python
 *.egg-info/
+.venv/
+venv/
+ENV/
 
-# IDEs
+# Environment
+.env
+.env.local
+.env.production.local
+.env.development.local
+.env.test.local
+
+# IDE
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# Project specific
-data/extracted_chunks.json
-*.log
+# Vercel
+.vercel
+
+# Data files (optional - uncomment if you want to exclude from git)
+# api/data/raw_papers/*.pdf
+# api/data/extracted_chunks.json
+# api/data/merge_log.json

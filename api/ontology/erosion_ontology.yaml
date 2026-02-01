@@ -1,0 +1,129 @@
+ontology:
+  name: "Landscape Erosion Ontology"
+  version: "1.0.0"
+  description: "A minimal, research-grade ontology for landscape erosion, suitable for LLMOps and Knowledge Graphs."
+  
+  entities:
+    - name: "ErosionProcess"
+      description: "A physical process that detaches and transports soil or rock material."
+      attributes:
+        - "mechanism"
+        - "time_scale"
+        - "intensity"
+    
+    - name: "Landform"
+      description: "A natural feature of the earth's surface."
+      attributes:
+        - "elevation"
+        - "slope_gradient"
+        - "aspect"
+    
+    - name: "Material"
+      description: "The physical substance comprising the landform, such as soil or rock."
+      attributes:
+        - "texture"
+        - "porosity"
+        - "erodibility_k_factor"
+    
+    - name: "Factor"
+      description: "An environmental or anthropogenic variable that influences erosion."
+      attributes:
+        - "value"
+        - "unit"
+        - "variability"
+    
+    - name: "Model"
+      description: "A computational or empirical model used to simulate or predict erosion."
+      attributes:
+        - "type"
+        - "spatial_resolution"
+        - "temporal_resolution"
+    
+    - name: "Metric"
+      description: "A quantitative measure of erosion or its drivers."
+      attributes:
+        - "name"
+        - "unit"
+        - "methodology"
+    
+    - name: "Region"
+      description: "A geographic area where erosion occurs."
+      attributes:
+        - "coordinates"
+        - "area_km2"
+        - "climate_zone"
+    
+    - name: "Publication"
+      description: "Scientific literature or report documenting the erosion study."
+      attributes:
+        - "title"
+        - "authors"
+        - "year"
+        - "doi"
+
+  relations:
+    - name: "MODULATES"
+      source: "Factor"
+      target: "ErosionProcess"
+      description: "Indicates that a factor increases, decreases, or regulates the rate of an erosion process."
+      cardinality: "many-to-many"
+    
+    - name: "ACTS_ON"
+      source: "ErosionProcess"
+      target: "Landform"
+      description: "The physical action of the erosion process reshaping a landform."
+      cardinality: "many-to-many"
+      
+    - name: "AFFECTS"
+      source: "ErosionProcess"
+      target: "Material"
+      description: "The interaction where the process detaches or alters the material."
+      cardinality: "many-to-many"
+
+    - name: "COMPOSED_OF"
+      source: "Landform"
+      target: "Material"
+      description: "Specifies the material composition of a landform."
+      cardinality: "one-to-many"
+
+    - name: "OCCURS_IN"
+      source: "ErosionProcess"
+      target: "Region"
+      description: "Spatially locates the occurrence of an erosion process."
+      cardinality: "many-to-many"
+
+    - name: "SIMULATES"
+      source: "Model"
+      target: "ErosionProcess"
+      description: "Indicates which process the model is designed to represent."
+      cardinality: "many-to-many"
+      
+    - name: "ESTIMATES"
+      source: "Model"
+      target: "Metric"
+      description: "The output variable calculated by the model."
+      cardinality: "one-to-many"
+      
+    - name: "USES_INPUT"
+      source: "Model"
+      target: "Factor"
+      description: "Input parameters required by the model."
+      cardinality: "one-to-many"
+      
+    - name: "MEASURES"
+      source: "Metric"
+      target: "ErosionProcess"
+      description: "Quantifies a specific aspect of an erosion process."
+      cardinality: "many-to-one"
+      
+    - name: "DESCRIBED_IN"
+      source: "Any"
+      target: "Publication"
+      description: "Links any entity or study to its source literature."
+      cardinality: "many-to-many"
+    
+    - name: "LOCATED_IN"
+      source: "Landform"
+      target: "Region"
+      description: "Geographic positioning of a landform."
+      cardinality: "many-to-one"
