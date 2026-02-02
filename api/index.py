@@ -107,7 +107,8 @@ def extract_graph_data(retrieval_result) -> dict:
                 "source": subject,
                 "target": obj,
                 "type": rel_type,
-                "sourceFile": getattr(triplet, 'source_file', 'Unknown')
+                "sourceFile": getattr(triplet, 'source_file', 'Unknown'),
+                "doiUrl": getattr(triplet, 'doi_url', 'N/A')
             })
 
     
@@ -116,14 +117,18 @@ def extract_graph_data(retrieval_result) -> dict:
 
 def format_context_with_doi(retrieval_result) -> tuple:
     """Format retrieval result with DOI metadata"""
-    # Format graph triplets
+    # Format graph triplets with DOI metadata
     graph_lines = []
     for t in retrieval_result.triplets:
+        doi = getattr(t, 'doi_url', 'N/A')
+        pg = getattr(t, 'page_number', 'Unknown')
         source = t.source_file or "Unknown"
-        line = f"- ({t.subject}) -[{t.relationship}]-> ({t.obj}) (Source: {source})"
+        
+        # Format the triplet line with source info
+        line = f"- ({t.subject}) -[{t.relationship}]-> ({t.obj}) (Source: {source}, Page: {pg} | DOI: {doi})"
         graph_lines.append(line)
     
-    graph_context = "\\n".join(graph_lines) if graph_lines else "No graph relationships found."
+    graph_context = "\n".join(graph_lines) if graph_lines else "No graph relationships found."
     
     # Format context with metadata - ONLY include chunks with valid DOI
     context_parts = []
@@ -159,7 +164,7 @@ GRAPHRAG_RESPONSE_TEMPLATE = """You are an expert research assistant specializin
 Question: {query}
 
 CRITICAL CITATION RULES:
-- ONLY cite sources that are explicitly provided in the "Retrieved Entities" section below
+- ONLY cite sources that are explicitly provided in the "Knowledge Graph Relationships" or "Retrieved Entities" sections below
 - NEVER make up, invent, or fabricate any citations or DOI links
 - NEVER cite a source that doesn't appear in the context with a valid DOI link
 - Every citation MUST use this EXACT format: (Source: <filename>, Page: <page_number> | DOI: <doi_url>)
@@ -167,7 +172,7 @@ CRITICAL CITATION RULES:
 
 Citation Format Examples:
 ✓ CORRECT: "Rainfall erosivity is critical... (Source: A review of the (Revised) Universal Soil Loss Equation, Page: 7 | DOI: https://doi.org/10.5194/hess-22-6059-2018)"
-✗ WRONG: Citing any source not in the Retrieved Entities section
+✗ WRONG: Citing any source not in the "Knowledge Graph Relationships" or "Retrieved Entities" sections
 ✗ WRONG: Making up DOI links or page numbers
 ✗ WRONG: Using sources without DOI links
 
