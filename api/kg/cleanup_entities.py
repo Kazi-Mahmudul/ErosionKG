@@ -84,8 +84,8 @@ def create_similarity_groups(entities: List[Dict]) -> Dict[str, List[str]]:
                         processed.add(match)
     
     # Step 2: Cluster remaining similar entities
-    # Group by first letter (single-letter nodes are problematic)
-    single_letter_entities = [e for e in entities if len(e["name"]) <= 2 and e["name"].upper() == e["name"]]
+    # These single-letter nodes (m, n, P, L, etc.) should NOT exist - they are noise or artifacts
+    single_letter_entities = [e for e in entities if len(e["name"].strip()) == 1]
     
     # These single-letter nodes (P, L, etc.) should NOT exist - they are stemming/abbreviation artifacts
     # We'll merge them into their likely full forms based on relationships
