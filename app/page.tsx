@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
-import { Menu, Moon, Sun, GripVertical } from "lucide-react";
+import { Menu, Moon, Sun, GripVertical, PanelRightClose, PanelRightOpen } from "lucide-react";
 import { useTheme } from "next-themes";
 import { ResearchLibrary } from "@/components/research-library";
 import { ChatInterface } from "@/components/chat-interface";
@@ -10,6 +10,7 @@ import { GraphVisualizer } from "@/components/graph-visualizer";
 export default function HomePage() {
     const [graphData, setGraphData] = useState<{ nodes: any[]; edges: any[] } | undefined>();
     const [leftPanelOpen, setLeftPanelOpen] = useState(true);
+    const [rightPanelOpen, setRightPanelOpen] = useState(false); // collapsed by default on mobile
     const [leftWidth, setLeftWidth] = useState(25); // percentage
     const [rightWidth, setRightWidth] = useState(25); // percentage
     const [isDraggingLeft, setIsDraggingLeft] = useState(false);
@@ -67,12 +68,25 @@ export default function HomePage() {
 
                 <div className="relative px-6 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                        {/* Mobile menu toggle */}
                         <button
                             onClick={() => setLeftPanelOpen(!leftPanelOpen)}
                             className="lg:hidden p-2 hover:bg-secondary rounded-lg transition-all hover:scale-110 active:scale-95"
+                            title="Research Library"
                         >
                             <Menu className="h-5 w-5" />
+                        </button>
+
+                        {/* Mobile graph panel toggle */}
+                        <button
+                            onClick={() => setRightPanelOpen(!rightPanelOpen)}
+                            className="lg:hidden p-2 hover:bg-secondary rounded-lg transition-all hover:scale-110 active:scale-95"
+                            title="Knowledge Graph"
+                        >
+                            {rightPanelOpen ? (
+                                <PanelRightClose className="h-5 w-5" />
+                            ) : (
+                                <PanelRightOpen className="h-5 w-5" />
+                            )}
                         </button>
 
                         {/* Logo with pulse animation */}
@@ -153,9 +167,8 @@ export default function HomePage() {
 
                 {/* Center Panel - Chat Interface */}
                 <div
-                    className="animate-in fade-in zoom-in-95 duration-500"
+                    className="flex-1 lg:flex-initial animate-in fade-in zoom-in-95 duration-500 center-panel"
                     style={{
-                        width: `${centerWidth}%`,
                         transition: isDraggingLeft || isDraggingRight ? 'none' : 'width 0.2s'
                     }}
                 >
@@ -165,10 +178,10 @@ export default function HomePage() {
                     />
                 </div>
 
-                {/* Right Resize Handle */}
+                {/* Right Resize Handle - desktop only */}
                 <div
                     onMouseDown={handleMouseDown('right')}
-                    className="w-1 bg-border hover:bg-primary/50 transition-colors cursor-col-resize group relative flex items-center justify-center"
+                    className="hidden lg:flex w-1 bg-border hover:bg-primary/50 transition-colors cursor-col-resize group relative items-center justify-center"
                 >
                     <div className="absolute inset-y-0 -left-1 -right-1 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                         <div className="bg-primary/20 backdrop-blur-sm p-1 rounded-full shadow-lg">
@@ -177,9 +190,9 @@ export default function HomePage() {
                     </div>
                 </div>
 
-                {/* Right Panel - Graph Visualizer */}
+                {/* Right Panel - Graph Visualizer (desktop only) */}
                 <div
-                    className="animate-in fade-in slide-in-from-right-5 duration-500"
+                    className="hidden lg:block animate-in fade-in slide-in-from-right-5 duration-500"
                     style={{ width: `${rightWidth}%`, transition: isDraggingRight ? 'none' : 'width 0.2s' }}
                 >
                     <GraphVisualizer
@@ -207,7 +220,39 @@ export default function HomePage() {
                 </div>
             )}
 
+            {/* Mobile Graph Panel Overlay */}
+            {rightPanelOpen && (
+                <div className="lg:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm animate-in fade-in duration-300">
+                    <div className="absolute right-0 top-0 bottom-0 w-[85%] max-w-md bg-card shadow-2xl animate-in slide-in-from-right duration-300">
+                        <div className="p-4 border-b flex items-center justify-between">
+                            <h2 className="font-bold">Knowledge Graph</h2>
+                            <button
+                                onClick={() => setRightPanelOpen(false)}
+                                className="p-2 hover:bg-secondary rounded-lg transition-all"
+                            >
+                                ✕
+                            </button>
+                        </div>
+                        <div className="h-[calc(100%-60px)]">
+                            <GraphVisualizer
+                                className="h-full"
+                                graphData={graphData}
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <style jsx global>{`
+        .center-panel {
+          width: 100%;
+        }
+        @media (min-width: 1024px) {
+          .center-panel {
+            width: ${centerWidth}%;
+          }
+        }
+
         @keyframes gradient-x {
           0%, 100% {
             background-position: 0% 50%;
