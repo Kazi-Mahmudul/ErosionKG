@@ -1,6 +1,6 @@
 "use client";
 
-import { Send, Copy, Check, Download, FileText, TrendingUp, MessageSquare, Plus } from "lucide-react";
+import { Send, Copy, Check, Download, FileText, TrendingUp, MessageSquare, Plus, Lightbulb } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import ReactMarkdown from "react-markdown";
@@ -10,6 +10,7 @@ interface Message {
     content: string;
     citations?: Citation[];
     metrics?: Metric[];
+    relatedQueries?: string[];
 }
 
 interface Citation {
@@ -222,6 +223,16 @@ export function ChatInterface({ className, onGraphData }: ChatInterfaceProps) {
                             } else if (data.type === "error") {
                                 console.error("Server error:", data.message);
                                 throw new Error(data.message);
+                            } else if (data.type === "related_queries") {
+                                // Add related queries to the last message
+                                setMessages((prev) => {
+                                    const newMessages = [...prev];
+                                    newMessages[newMessages.length - 1] = {
+                                        ...newMessages[newMessages.length - 1],
+                                        relatedQueries: data.queries,
+                                    };
+                                    return newMessages;
+                                });
                             }
                         } catch (err) {
                             console.warn("Failed to parse SSE data:", line, err);
@@ -403,6 +414,31 @@ export function ChatInterface({ className, onGraphData }: ChatInterfaceProps) {
                                                 </div>
                                             </div>
                                         )}
+
+                                        {/* Related Queries */}
+                                        {msg.relatedQueries && msg.relatedQueries.length > 0 && !isLoading && (
+                                            <div className="mt-4 pt-4 border-t border-border/30">
+                                                <p className="text-xs font-semibold text-muted-foreground mb-3 flex items-center gap-1.5">
+                                                    <Lightbulb className="h-3.5 w-3.5" />
+                                                    Related Questions
+                                                </p>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {msg.relatedQueries.map((query, i) => (
+                                                        <button
+                                                            key={i}
+                                                            onClick={() => {
+                                                                setInput(query);
+                                                                inputRef.current?.focus();
+                                                            }}
+                                                            className="related-query-btn px-3 py-1.5 text-xs rounded-full bg-secondary/80 hover:bg-primary/20 hover:text-primary border border-border/30 hover:border-primary/30 transition-all hover:scale-105 active:scale-95 text-left"
+                                                            style={{ animationDelay: `${i * 100}ms` }}
+                                                        >
+                                                            {query}
+                                                        </button>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 ) : (
                                     <p className="whitespace-pre-wrap font-medium">{msg.content}</p>
@@ -497,6 +533,25 @@ export function ChatInterface({ className, onGraphData }: ChatInterfaceProps) {
 
         .citation-content {
           line-height: 1.7;
+        }
+
+        .related-query-btn {
+          animation: related-query-appear 0.4s ease-out backwards;
+        }
+
+        @keyframes related-query-appear {
+          from {
+            opacity: 0;
+            transform: translateY(10px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        .related-query-btn:hover {
+          box-shadow: 0 2px 12px hsl(var(--primary) / 0.2);
         }
       `}</style>
         </div>

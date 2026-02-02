@@ -189,6 +189,17 @@ Answer:## Context
 """
 
 
+RELATED_QUERIES_PROMPT = """Based on this Q&A about soil erosion research:
+
+Question: {query}
+Answer Summary: {response_summary}
+
+Generate exactly 3 short, specific follow-up questions a researcher might ask next.
+Keep each question under 60 characters. Focus on related concepts, causes, or solutions.
+
+Output ONLY the 3 questions, one per line. No numbering, no bullets, no explanations."""
+
+
 async def stream_chat_response(query: str):
     """Stream chat response with real GraphRAG data"""
     try:
@@ -215,16 +226,39 @@ async def stream_chat_response(query: str):
             query=query
         )
         
-        # Stream response from Groq
+        # Stream response from Groq and collect full text
         response_stream = llm.stream_complete(prompt)
+        full_response = ""
         
         for chunk in response_stream:
             if chunk.delta:
+                full_response += chunk.delta
                 yield f"data: {json.dumps({'type': 'text', 'content': chunk.delta})}\n\n"
                 await asyncio.sleep(0.01)
         
         # Send completion
         yield f"data: {json.dumps({'type': 'done'})}\n\n"
+        
+        # Generate related queries
+        try:
+            # Use first 500 chars of response as summary for prompt
+            response_summary = full_response[:500].replace('\n', ' ')
+            related_prompt = RELATED_QUERIES_PROMPT.format(
+                query=query,
+                response_summary=response_summary
+            )
+            
+            related_response = llm.complete(related_prompt)
+            related_text = related_response.text.strip()
+            
+            # Parse the 3 questions (one per line)
+            related_queries = [q.strip() for q in related_text.split('\n') if q.strip()][:3]
+            
+            if related_queries:
+                yield f"data: {json.dumps({'type': 'related_queries', 'queries': related_queries})}\n\n"
+        except Exception as rq_error:
+            # Don't fail the whole response if related queries fail
+            print(f"Related queries generation failed: {rq_error}")
         
     except Exception as e:
         import traceback
