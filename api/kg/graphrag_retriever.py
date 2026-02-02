@@ -50,6 +50,8 @@ class GraphTriplet:
     relationship: str
     obj: str
     source_file: Optional[str] = None
+    doi_url: Optional[str] = "N/A"
+    page_number: Optional[str] = "Unknown"
 
 
 @dataclass
@@ -239,12 +241,16 @@ class GraphExpander:
             MATCH (e:Entity)
             WHERE toLower(e.name) = toLower(name)
             MATCH (e)-[r]-(other:Entity)
+            OPTIONAL MATCH (c:Chunk) WHERE c.sourceFile = r.source
+            WITH e, r, other, collect(c.doiUrl)[0] as chunk_doi, collect(c.pageNumber)[0] as chunk_page
             RETURN DISTINCT 
                 e.name as subject,
                 type(r) as rel_type,
                 r.type as rel_subtype,
                 other.name as object,
-                r.source as source_file
+                r.source as source_file,
+                coalesce(chunk_doi, "N/A") as doi_url,
+                coalesce(toString(chunk_page), "Unknown") as page_number
             LIMIT 50
             """
         else:
@@ -255,12 +261,16 @@ class GraphExpander:
             MATCH path = (e)-[*1..2]-(other:Entity)
             WITH e, other, relationships(path) as rels
             UNWIND rels as r
+            OPTIONAL MATCH (c:Chunk) WHERE c.sourceFile = r.source
+            WITH startNode(r) as subt, r, endNode(r) as objt, collect(c.doiUrl)[0] as chunk_doi, collect(c.pageNumber)[0] as chunk_page
             RETURN DISTINCT 
-                startNode(r).name as subject,
+                subt.name as subject,
                 type(r) as rel_type,
                 r.type as rel_subtype,
-                endNode(r).name as object,
-                r.source as source_file
+                objt.name as object,
+                r.source as source_file,
+                coalesce(chunk_doi, "N/A") as doi_url,
+                coalesce(toString(chunk_page), "Unknown") as page_number
             LIMIT 100
             """
         
@@ -273,7 +283,9 @@ class GraphExpander:
                 subject=r["subject"],
                 relationship=rel,
                 obj=r["object"],
-                source_file=r["source_file"]
+                source_file=r["source_file"],
+                doi_url=r["doi_url"],
+                page_number=r["page_number"]
             )
             triplets.append(triplet)
         
@@ -307,8 +319,13 @@ class ContextSynthesizer:
                 if key in seen:
                     continue
                 seen.add(key)
-                source = f"[Source: {t.source_file}]" if t.source_file else ""
-                parts.append(f"- ({t.subject}) -[{t.relationship}]-> ({t.obj}) {source}")
+                source_text = ""
+                if t.doi_url and t.doi_url != "N/A":
+                     source_text = f" [Source: {t.source_file}, Page: {t.page_number} | DOI: {t.doi_url}]"
+                elif t.source_file:
+                     source_text = f" [Source: {t.source_file}]"
+                     
+                parts.append(f"- ({t.subject}) -[{t.relationship}]-> ({t.obj}){source_text}")
         
         return "\n".join(parts)
 
