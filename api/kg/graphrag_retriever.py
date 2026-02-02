@@ -399,13 +399,14 @@ class HybridGraphRAGRetriever:
 # --------------------------------------------------------------------------
 def get_retriever():
     """Initialize and return the retriever."""
-    from llama_index.embeddings.google_genai import GoogleGenAIEmbedding
+    from llama_index.embeddings.gemini import GeminiEmbedding
+    from llama_index.llms.groq import Groq
     
     driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USERNAME, NEO4J_PASSWORD))
     driver.verify_connectivity()
     
-    llm = Gemini(model="models/gemini-2.0-flash", api_key=GOOGLE_API_KEY)
-    embed_model = GoogleGenAIEmbedding(model="models/text-embedding-004", api_key=GOOGLE_API_KEY)
+    llm = Groq(model="llama-3.3-70b-versatile", api_key=os.getenv("GROQ_API_KEY"))
+    embed_model = GeminiEmbedding(model="models/text-embedding-004", api_key=GOOGLE_API_KEY)
     
     return HybridGraphRAGRetriever(driver, llm, embed_model), driver
 

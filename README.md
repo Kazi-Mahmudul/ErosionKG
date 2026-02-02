@@ -2,6 +2,8 @@
 
 A premium full-stack GraphRAG application for soil erosion research, combining Next.js, FastAPI, Neo4j, and Groq LLM.
 
+## Live: ![ErosionKG](https://erosionkg.vercel.app)
+
 ![ErosionKG Dashboard](https://img.shields.io/badge/Status-Production%20Ready-green)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
@@ -119,33 +121,6 @@ python index.py
 
 Access at `http://localhost:3000`
 
-## 🚢 Deployment
-
-### Vercel (Recommended)
-
-1. **Push to GitHub**
-```bash
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
-
-2. **Deploy to Vercel**
-- Connect repository at [vercel.com](https://vercel.com)
-- Add environment variables in dashboard
-- Deploy automatically triggers
-
-### Environment Variables for Vercel
-
-Add these in Vercel Dashboard → Settings → Environment Variables:
-
-```
-NEO4J_URI
-NEO4J_USERNAME
-NEO4J_PASSWORD
-GROQ_API_KEY
-HF_TOKEN (optional)
-```
 
 ## 📊 Knowledge Graph Setup
 
@@ -161,41 +136,6 @@ python kg/entity_extractor.py  # Extract entities
 python kg/upload_to_neo4j.py  # Upload to Neo4j
 ```
 
-### Entity Cleanup (Optional)
-
-If you notice duplicate entities:
-
-```bash
-cd api
-python kg/cleanup_entities.py
-```
-
-This merges semantically similar entities (e.g., "RUSLE" + "(R)USLE" + "USLE model").
-
-## 🎨 UI Customization
-
-### Theme Colors
-
-Edit `tailwind.config.ts`:
-
-```ts
-theme: {
-  extend: {
-    colors: {
-      primary: {...},  // Adjust your brand color
-    }
-  }
-}
-```
-
-### Panel Widths
-
-In `app/page.tsx`, adjust default sizes:
-
-```ts
-const [leftWidth, setLeftWidth] = useState(25); // %
-const [rightWidth, setRightWidth] = useState(25); // %
-```
 
 ## 📖 API Endpoints
 
