@@ -128,11 +128,11 @@ def format_context_with_doi(retrieval_result) -> tuple:
     # Format context with metadata
     context_parts = []
     for i, chunk in enumerate(retrieval_result.chunks, 1):
-        # Extract metadata
-        source_file = chunk.metadata.get("source_file", "Unknown")
-        page_num = chunk.metadata.get("page_number", "Unknown")
-        doi_url = chunk.metadata.get("doi_url", "N/A")
-        citation_str = chunk.metadata.get("citation_str", source_file)
+        # Access dataclass attributes directly
+        source_file = chunk.source_file or "Unknown"
+        page_num = chunk.page_number or "Unknown"
+        doi_url = chunk.doi_url or "N/A"
+        citation_str = chunk.citation_str or source_file
         
         # Format with clear metadata for LLM to cite
         context_parts.append(
