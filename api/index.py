@@ -125,23 +125,29 @@ def format_context_with_doi(retrieval_result) -> tuple:
     
     graph_context = "\\n".join(graph_lines) if graph_lines else "No graph relationships found."
     
-    # Format context with metadata
+    # Format context with metadata - ONLY include chunks with valid DOI
     context_parts = []
-    for i, chunk in enumerate(retrieval_result.chunks, 1):
+    source_num = 1
+    for chunk in retrieval_result.chunks:
         # Access dataclass attributes directly
         source_file = chunk.source_file or "Unknown"
         page_num = chunk.page_number or "Unknown"
         doi_url = chunk.doi_url or "N/A"
         citation_str = chunk.citation_str or source_file
         
+        # SKIP chunks without valid DOI to prevent hallucinated citations
+        if not doi_url or doi_url == "N/A" or not doi_url.startswith("http"):
+            continue
+        
         # Format with clear metadata for LLM to cite
         context_parts.append(
-            f"[Source {i}]\n"
+            f"[Source {source_num}]\n"
             f"File: {citation_str}\n"
             f"Page: {page_num}\n"
             f"DOI: {doi_url}\n"
             f"Content: {chunk.content}\n"
         )
+        source_num += 1
     
     entity_context = "\n\n".join(context_parts) if context_parts else "No entities found."
     
@@ -152,17 +158,18 @@ GRAPHRAG_RESPONSE_TEMPLATE = """You are an expert research assistant specializin
 
 Question: {query}
 
-Instructions:
-- Provide a comprehensive, well-structured answer based on the context
-- ALWAYS cite your sources using this EXACT format: (Source: <filename>, Page: <page_number> | DOI: <doi_url>)
-- The page number MUST be taken from the metadata of each chunk
-- If a source has no page number in metadata, use "Page: Unknown" NOT "Page: N/A"
+CRITICAL CITATION RULES:
+- ONLY cite sources that are explicitly provided in the "Retrieved Entities" section below
+- NEVER make up, invent, or fabricate any citations or DOI links
+- NEVER cite a source that doesn't appear in the context with a valid DOI link
+- Every citation MUST use this EXACT format: (Source: <filename>, Page: <page_number> | DOI: <doi_url>)
+- If you cannot find relevant information WITH a valid DOI in the provided sources, say "I don't have enough information with verifiable sources to answer this question."
 
 Citation Format Examples:
-✓ CORRECT: "Rainfall erosivity is critical... (Source: 2018 Review RUSLE, Page: 7 | DOI: https://doi.org/10.5194/hess-22-6059-2018)"
-✓ CORRECT: "Slope affects erosion... (Source: 2020 Asia soil erosion review, Page: 12 | DOI: https://doi.org/example)"
-✗ WRONG: Don't write "no page number available" or any descriptive text
-✗ WRONG: Don't write "Page: N/A" - use "Page: Unknown" if truly missing
+✓ CORRECT: "Rainfall erosivity is critical... (Source: A review of the (Revised) Universal Soil Loss Equation, Page: 7 | DOI: https://doi.org/10.5194/hess-22-6059-2018)"
+✗ WRONG: Citing any source not in the Retrieved Entities section
+✗ WRONG: Making up DOI links or page numbers
+✗ WRONG: Using sources without DOI links
 
 Answer:## Context
 ### Knowledge Graph Relationships
