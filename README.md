@@ -2,7 +2,7 @@
 
 A premium full-stack GraphRAG application for soil erosion research, combining Next.js, FastAPI, Neo4j, and Groq LLM.
 
-## Live: ![ErosionKG](https://erosionkg.vercel.app)
+## Live: [ErosionKG](https://erosionkg.vercel.app)
 
 ![ErosionKG Dashboard](https://img.shields.io/badge/Status-Production%20Ready-green)
 ![License](https://img.shields.io/badge/License-MIT-blue)
