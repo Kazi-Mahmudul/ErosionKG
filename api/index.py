@@ -150,9 +150,6 @@ def format_context_with_doi(retrieval_result) -> tuple:
 
 GRAPHRAG_RESPONSE_TEMPLATE = """You are an expert research assistant specializing in soil erosion and land degradation.
 
-Context:
-{context}
-
 Question: {query}
 
 Instructions:
