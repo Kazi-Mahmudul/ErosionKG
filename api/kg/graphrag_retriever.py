@@ -159,8 +159,52 @@ class VectorSearcher:
                 entities=[] # Entities will be linked by EntityLinker
             )
             chunks.append(chunk)
+
+        # Keyword Search Supplement (for specific terms like "rill")
+        # Extract keywords - exclude common stop words and punctuation
+        stop_words = {'what', 'how', 'why', 'when', 'where', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'could', 'should', 'would', 'now'}
         
-        return chunks
+        raw_words = query.lower().replace('?', '').replace('.', '').replace(',', '').split()
+        words = [w for w in raw_words if len(w) > 3 and w not in stop_words]
+        
+        if words:
+            logger.info(f"Supplemental keyword search for: {words}")
+            # Identify the most specific word (least common)
+            # For this domain, we prioritize specific types of erosion
+            priority_words = [w for w in words if w in {'rill', 'gully', 'ls-factor', 'rusle', 'musle', 'sediment', 'deposition', 'rill', 'inter-rill'}]
+            search_words = priority_words if priority_words else words
+            
+            # Search for chunks containing specific keywords (must contain at least one priority word if present)
+            keyword_query = """
+            MATCH (c:Chunk)
+            WHERE any(word IN $words WHERE toLower(c.content) CONTAINS word)
+            RETURN c.content as content, c.sourceFile as source_file, c.pageNumber as page_number, 
+                   c.doiUrl as doi_url, c.citationStr as citation_str, 0.9 as score
+            ORDER BY size([word IN $words WHERE toLower(c.content) CONTAINS word]) DESC
+            LIMIT $limit
+            """
+            kw_result = self.driver.execute_query(
+                keyword_query,
+                words=search_words,
+                limit=5
+            )
+            
+            seen_content = {c.content for c in chunks}
+            for r in kw_result.records:
+                if r["content"] not in seen_content:
+                    chunks.append(RetrievedChunk(
+                        content=r["content"],
+                        source_file=r["source_file"],
+                        page_number=r["page_number"],
+                        doi_url=r["doi_url"],
+                        citation_str=r["citation_str"],
+                        score=r["score"],
+                        entities=[]
+                    ))
+        
+        # Final sort by score
+        chunks.sort(key=lambda x: x.score, reverse=True)
+        return chunks[:10] # Return up to 10 total
 
 
 # --------------------------------------------------------------------------
@@ -193,9 +237,13 @@ class EntityLinker:
         
         # 1. Direct substring match (fast)
         for chunk in chunks:
-            content_lower = chunk.content.lower()
+            chunk_content = chunk.content.lower()
             for entity in entities:
-                if entity in content_lower:
+                # Require word boundaries for short entities to avoid matching inside other words
+                if len(entity) <= 3:
+                     if f" {entity} " in f" {chunk_content} ":
+                         linked.add(entity)
+                elif entity in chunk_content:
                     linked.add(entity)
         
         # 2. Fuzzy match chunks if few entities found
@@ -369,9 +417,8 @@ class HybridGraphRAGRetriever:
         logger.info(f"Found {len(chunks)} chunks via vector search")
         
         # 3. Entity linking - use chunk entities + expanded terms
-        linked_entities = []
-        for chunk in chunks:
-            linked_entities.extend(chunk.entities)
+        # Fix: Previously we were just extending empty lists. Now we call the linker.
+        linked_entities = self.entity_linker.link(chunks)
         
         # Also fuzzy match the QUERY against entities to find entry points
         # This is critical if chunks don't contain exact entity names
@@ -379,15 +426,14 @@ class HybridGraphRAGRetriever:
         all_entities = self.entity_linker._load_entities()
         
         # Match query directly
-        query_matches = process.extract(query, all_entities, scorer=fuzz.partial_ratio, limit=5, score_cutoff=80)
+        query_matches = process.extract(query, all_entities, scorer=fuzz.partial_ratio, limit=5, score_cutoff=85)
         for match, score, idx in query_matches:
             logger.info(f"Fuzzy match query '{query}' -> '{match}' (score: {score})")
             linked_entities.append(match)
             
         # Match expanded terms
         for term in expanded_terms:
-            linked_entities.append(term)
-            # Fuzzy match expanded terms too
+            # Fuzzy match expanded terms
             term_matches = process.extract(term, all_entities, scorer=fuzz.ratio, limit=2, score_cutoff=85)
             for match, score, idx in term_matches:
                linked_entities.append(match)
