@@ -87,9 +87,20 @@ def get_global_context(text: str) -> str:
     response = llm.complete(prompt)
     return response.text.strip()
 
+def get_paper_title(text: str) -> str:
+    """Extracts the exact title of the paper."""
+    prompt = (
+        "Extract the exact title of this scientific paper from the provided text. "
+        "Return ONLY the title string. Do not add any quotes or labels."
+        f"\n\nText Preview:\n{text[:2000]}"
+    )
+    # Using complete instead of chat for simpler prompt-response
+    response = llm.complete(prompt)
+    return response.text.strip()
+
 import time
 
-def process_pdfs(data_dir: str = "data/raw_papers", output_file: str = "data/extracted_chunks.json"):
+def process_pdfs(data_dir: str = "api/data/raw_papers", output_file: str = "api/data/extracted_chunks.json"):
     pdf_files = glob.glob(os.path.join(data_dir, "*.pdf"))
     
     if not pdf_files:
@@ -157,12 +168,15 @@ def process_pdfs(data_dir: str = "data/raw_papers", output_file: str = "data/ext
                 documents = parser.load_data(pdf_path)
                 full_text = "\n".join([doc.text for doc in documents])
                 
-                # 2. Simple citation - just use filename as reference
-                # DOI and page_number are the primary metadata for citations
-                import re
-                citation_str = filename.replace('.pdf', '').replace('_', ' ')
-                logger.info(f"  - Citation ref: {citation_str}")
-                
+                # 2. Extract real Title using Gemini
+                try:
+                    logger.info("  - Extracting paper title...")
+                    citation_str = get_paper_title(full_text)
+                    logger.info(f"  - Clean Title: {citation_str}")
+                except Exception as e:
+                    logger.warning(f"  - Title extraction failed, falling back to filename: {e}")
+                    citation_str = filename.replace('.pdf', '').replace('_', ' ')
+
                 # 3. Contextual Enrichment
                 global_context = get_global_context(full_text)
                 logger.info(f"Global Context for {filename}: {global_context}")

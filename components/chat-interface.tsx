@@ -1,7 +1,7 @@
 "use client";
 
-import { Send, Copy, Check, Download, FileText, TrendingUp, MessageSquare, Plus, Lightbulb } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { Send, Copy, Check, Download, FileText, TrendingUp, MessageSquare, Plus, Lightbulb, Mic, MicOff } from "lucide-react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import ReactMarkdown from "react-markdown";
 
@@ -92,8 +92,60 @@ export function ChatInterface({ className, onGraphData }: ChatInterfaceProps) {
     const [input, setInput] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+    const [isListening, setIsListening] = useState(false);
+    const recognitionRef = useRef<any>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLTextAreaElement>(null);
+
+    // Initialize Speech Recognition
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+            if (SpeechRecognition) {
+                const recognition = new SpeechRecognition();
+                recognition.continuous = false;
+                recognition.interimResults = true;
+                recognition.lang = 'en-US';
+
+                recognition.onresult = (event: any) => {
+                    const transcript = Array.from(event.results)
+                        .map((result: any) => result[0].transcript)
+                        .join('');
+                    setInput(transcript);
+                };
+
+                recognition.onend = () => {
+                    setIsListening(false);
+                };
+
+                recognition.onerror = (event: any) => {
+                    console.error('Speech recognition error:', event.error);
+                    setIsListening(false);
+                };
+
+                recognitionRef.current = recognition;
+            }
+        }
+    }, []);
+
+    const toggleListening = useCallback(() => {
+        if (!recognitionRef.current) {
+            alert('Speech recognition is not supported in your browser.');
+            return;
+        }
+
+        if (isListening) {
+            recognitionRef.current.stop();
+            setIsListening(false);
+        } else {
+            try {
+                recognitionRef.current.start();
+                setIsListening(true);
+            } catch (error) {
+                console.error('Failed to start speech recognition:', error);
+            }
+        }
+    }, [isListening]);
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -480,6 +532,23 @@ export function ChatInterface({ className, onGraphData }: ChatInterfaceProps) {
                             className="flex-1 px-4 py-3 bg-transparent focus:outline-none resize-none max-h-[200px] text-sm"
                             disabled={isLoading}
                         />
+                        <button
+                            type="button"
+                            onClick={toggleListening}
+                            className={cn(
+                                "p-3 rounded-full transition-all hover:scale-110 active:scale-95",
+                                isListening
+                                    ? "bg-red-500 text-white animate-pulse"
+                                    : "bg-secondary hover:bg-secondary/80 text-muted-foreground"
+                            )}
+                            title={isListening ? "Stop listening" : "Start voice input"}
+                        >
+                            {isListening ? (
+                                <MicOff className="h-5 w-5" />
+                            ) : (
+                                <Mic className="h-5 w-5" />
+                            )}
+                        </button>
                         <button
                             type="submit"
                             disabled={!input.trim() || isLoading}

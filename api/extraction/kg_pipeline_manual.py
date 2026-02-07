@@ -119,7 +119,7 @@ def upsert_triplet_to_neo4j(driver, subject: str, relationship: str, obj: str, s
     except Exception as e:
         logger.warning(f"Failed to upsert triplet: {e}")
 
-def run_kg_extraction(input_file: str = "data/extracted_chunks.json"):
+def run_kg_extraction(input_file: str = "api/data/extracted_chunks.json", test_mode: bool = False):
     # 1. Connect to Neo4j
     logger.info("Connecting to Neo4j...")
     driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USERNAME, NEO4J_PASSWORD))
@@ -140,7 +140,13 @@ def run_kg_extraction(input_file: str = "data/extracted_chunks.json"):
         data = json.load(f)
     
     chunks = data.get("chunks", [])
-    logger.info(f"Loaded {len(chunks)} chunks for KG extraction.")
+    
+    # If test mode, only process first 5 chunks
+    if test_mode:
+        chunks = chunks[:5]
+        logger.info(f"TEST MODE: Processing only {len(chunks)} chunks")
+    else:
+        logger.info(f"Loaded {len(chunks)} chunks for KG extraction.")
 
     # 4. Load prompt template from registry
     prompt_template = get_prompt_template()
@@ -185,4 +191,7 @@ def run_kg_extraction(input_file: str = "data/extracted_chunks.json"):
     logger.info("Done!")
 
 if __name__ == "__main__":
-    run_kg_extraction()
+    import sys
+    # Check for --test flag
+    test_mode = "--test" in sys.argv
+    run_kg_extraction(test_mode=test_mode)

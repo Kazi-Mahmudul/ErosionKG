@@ -67,6 +67,38 @@ def get_all_entities(driver) -> List[Dict]:
     return entities
 
 
+def is_numeric_entity(name: str) -> bool:
+    """
+    Check if entity is a numeric value/measurement that should NOT be merged.
+    Examples: '10.2 ton ha¯¹ yr¯¹', '0 to 334.5 ton/ha/year', '1.9 mm year-1', '0.2'
+    """
+    import re
+    
+    # Skip if name is too short
+    if len(name.strip()) < 2:
+        return True
+    
+    # Patterns that indicate numeric/measurement entities
+    numeric_patterns = [
+        r'^\d',  # Starts with digit
+        r'^-?\d+\.?\d*$',  # Pure number like "0.2", "10", "-5.3"
+        r'\d+\s*(to|-)\s*\d+',  # Ranges like "0 to 334.5"
+        r'\d+\s*(ton|t|kg|mm|cm|m|ha|yr|year|%)',  # Measurements
+        r'ton\s*(per|/|ha)',  # Erosion rates
+        r'ha.*yr',  # Hectare per year patterns
+        r'mm.*year',  # mm per year patterns
+        r'^\d+°',  # Degree measurements
+        r'^\d+\s*m$',  # Meters like "681 m"
+    ]
+    
+    name_lower = name.lower().strip()
+    for pattern in numeric_patterns:
+        if re.search(pattern, name_lower):
+            return True
+    
+    return False
+
+
 # --------------------------------------------------------------------------
 # 2. CANDIDATE SELECTION: Fuzzy matching to find potential duplicates
 # --------------------------------------------------------------------------
@@ -76,10 +108,15 @@ def find_duplicate_candidates(entities: List[Dict], threshold: float = 80.0) -> 
     Returns list of (entity1, entity2, similarity_score) tuples.
     """
     candidates = []
-    names = [e["name"].lower() for e in entities]
+    
+    # Filter out numeric entities BEFORE processing
+    filtered_entities = [e for e in entities if not is_numeric_entity(e["name"])]
+    logger.info(f"Filtered to {len(filtered_entities)} non-numeric entities (excluded {len(entities) - len(filtered_entities)} numeric values)")
+    
+    names = [e["name"].lower() for e in filtered_entities]
     seen_pairs = set()
     
-    for i, entity in enumerate(tqdm(entities, desc="Finding candidates")):
+    for i, entity in enumerate(tqdm(filtered_entities, desc="Finding candidates")):
         name = entity["name"].lower()
         
         # Find similar names
@@ -102,7 +139,7 @@ def find_duplicate_candidates(entities: List[Dict], threshold: float = 80.0) -> 
                 continue
             seen_pairs.add(pair_key)
             
-            candidates.append((entity, entities[match_idx], score))
+            candidates.append((entity, filtered_entities[match_idx], score))
     
     logger.info(f"Found {len(candidates)} potential duplicate pairs")
     return candidates
@@ -113,15 +150,17 @@ def find_duplicate_candidates(entities: List[Dict], threshold: float = 80.0) -> 
 # --------------------------------------------------------------------------
 VERIFICATION_PROMPT = """You are an expert in landscape erosion research terminology.
 
-Are these two entities from landscape erosion research identical or referring to the same concept?
+Are these two entities identical or referring to the EXACT same concept?
 
 Entity A: {name1}
 Entity B: {name2}
 
-Consider:
-- One might be an abbreviation of the other
-- Minor spelling differences
-- Same concept with slight naming variations
+IMPORTANT RULES:
+1. NEVER merge different numeric values (e.g., "10.2 ton" and "12 ton" are DIFFERENT)
+2. NEVER merge different measurements or ranges
+3. Only merge if they are TRUE synonyms or spelling variations of the same concept
+4. Abbreviation expansions are OK (e.g., "GIS" = "Geographic Information System")
+5. Case variations are OK (e.g., "RUSLE" = "rusle")
 
 Respond with ONLY "YES" or "NO".
 """
