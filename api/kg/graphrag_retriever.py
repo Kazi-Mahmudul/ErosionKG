@@ -469,7 +469,7 @@ def get_retriever():
     driver.verify_connectivity()
     
     llm = Groq(model="llama-3.3-70b-versatile", api_key=os.getenv("GROQ_API_KEY"))
-    embed_model = GeminiEmbedding(model="models/text-embedding-004", api_key=GOOGLE_API_KEY)
+    embed_model = GeminiEmbedding(model_name="models/gemini-embedding-001", api_key=GOOGLE_API_KEY)
     
     return HybridGraphRAGRetriever(driver, llm, embed_model), driver
 

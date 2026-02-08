@@ -22,7 +22,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Embedding dimension for text-embedding-004
-EMBEDDING_DIMENSION = 768
+EMBEDDING_DIMENSION = 768  # gemini-embedding-001
 VECTOR_INDEX_NAME = "erosion_chunk_index"
 
 
@@ -31,12 +31,11 @@ VECTOR_INDEX_NAME = "erosion_chunk_index"
 # --------------------------------------------------------------------------
 def get_embedding_model():
     """Initialize Google GenAI embeddings."""
-    try:
-        from llama_index.embeddings.google_genai import GoogleGenAIEmbedding
-        return GoogleGenAIEmbedding(
-            model="models/text-embedding-004",
-            api_key=GOOGLE_API_KEY
-        )
+    from llama_index.embeddings.gemini import GeminiEmbedding
+    return GeminiEmbedding(
+        model_name="models/gemini-embedding-001",
+        api_key=GOOGLE_API_KEY
+    )
     except ImportError:
         # Fallback to older package if available
         from llama_index.embeddings.gemini import GeminiEmbedding

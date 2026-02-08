@@ -20,7 +20,7 @@ NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 VECTOR_INDEX_NAME = "erosion_chunk_index"
-EMBEDDING_DIMENSION = 768  # Gemini text-embedding-004
+EMBEDDING_DIMENSION = 768  # gemini-embedding-001
 
 class ChunkIngester:
     def __init__(self, uri, user, password):
@@ -31,7 +31,7 @@ class ChunkIngester:
             raise ValueError("GOOGLE_API_KEY is required for embedding generation")
             
         self.embed_model = GeminiEmbedding(
-            model="models/text-embedding-004", 
+            model_name="models/gemini-embedding-001", 
             api_key=GOOGLE_API_KEY
         )
 
@@ -123,6 +123,6 @@ if __name__ == "__main__":
     ingester = ChunkIngester(NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
     try:
         ingester.create_constraints_and_index()
-        ingester.ingest_chunks("data/extracted_chunks.json")
+        ingester.ingest_chunks("api/data/extracted_chunks.json")
     finally:
         ingester.close()
