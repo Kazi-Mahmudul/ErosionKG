@@ -12,17 +12,16 @@ from datetime import datetime
 from tqdm import tqdm
 import pandas as pd
 
-# RAGAS imports - updated for v0.4+
-try:
-    from ragas.metrics.collections import faithfulness, answer_relevancy, context_recall, context_precision
-except ImportError:
-    # Fallback for older versions
-    from ragas.metrics import faithfulness, answer_relevancy, context_recall, context_precision
+# RAGAS imports - v0.4+ compatibility
+from ragas.metrics._answer_relevance import AnswerRelevancy
+from ragas.metrics._faithfulness import Faithfulness
+from ragas.metrics._context_recall import ContextRecall
+from ragas.metrics._context_precision import ContextPrecision
 from ragas import evaluate
 from datasets import Dataset
 
-# LangChain for judge LLM
-from langchain_google_genai import ChatGoogleGenerativeAI
+# LangChain for judge LLM and embeddings
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 
 # Baseline RAG
 from baseline_rag import BaselineRAG
@@ -153,6 +152,12 @@ def calculate_ragas_metrics(question: str, answer: str, ground_truth: str, conte
         temperature=0
     )
     
+    # Initialize Google embeddings for RAGAS
+    gemini_embeddings = GoogleGenerativeAIEmbeddings(
+        model="models/text-embedding-004",
+        google_api_key=os.getenv("GOOGLE_API_KEY")
+    )
+    
     # Create dataset in RAGAS format
     data = {
         "question": [question],
@@ -167,13 +172,14 @@ def calculate_ragas_metrics(question: str, answer: str, ground_truth: str, conte
         result = evaluate(
             dataset,
             metrics=[
-                faithfulness,
-                answer_relevancy,
-                context_recall,
-                context_precision
+                Faithfulness(llm=judge_llm),
+                AnswerRelevancy(llm=judge_llm, embeddings=gemini_embeddings),
+                ContextRecall(llm=judge_llm),
+                ContextPrecision(llm=judge_llm)
             ],
-            llm=judge_llm
-        )
+            llm=judge_llm,
+            embeddings=gemini_embeddings
+        ).to_pandas().iloc[0] # Fix: RAGAS evaluate returns a Dataset, convert to pandas and get the first row
         
         return {
             "faithfulness": result["faithfulness"],
@@ -624,6 +630,9 @@ def run_evaluation(
         result["erosionkg_answer"] = erosionkg_result["answer"]
         result["erosionkg_response_time"] = erosionkg_result["response_time_sec"]
         
+        # Short delay between queries (separate API keys now)
+        time.sleep(5)
+        
         # Query Baseline
         print(f"  -> Querying Baseline RAG...", end=" ")
         baseline_result = query_baseline(q["question"], baseline_rag)
@@ -643,6 +652,9 @@ def run_evaluation(
             )
         else:
             result["erosionkg"] = {"error": "No contexts available"}
+        
+        # Add delay between RAGAS calculations to prevent rate limiting
+        time.sleep(3)
         
         # RAGAS metrics for Baseline
         print(f"  -> Calculating RAGAS metrics (Baseline)...")

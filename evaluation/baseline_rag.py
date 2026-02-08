@@ -24,13 +24,14 @@ class BaselineRAG:
             auth=(os.getenv("NEO4J_USERNAME"), os.getenv("NEO4J_PASSWORD"))
         )
         
+        # Use dedicated Groq API key for baseline (separate from ErosionKG Cloud Run)
         self.llm = Groq(
             model="llama-3.3-70b-versatile",
-            api_key=os.getenv("GROQ_API_KEY"),
+            api_key=os.getenv("GROQ_API_KEY_BASELINE"),
             temperature=0.3
         )
         
-        self.embed_model_name = "gemini-embedding-001"  # Same as Eros ionKG main system
+        self.embed_model_name = "gemini-embedding-001"  # Same as ErosionKG main system
     
     def get_embedding(self, text: str) -> List[float]:
         """Get embedding using Google Generative AI"""
@@ -111,8 +112,19 @@ Question: {question}
 
 Answer:"""
         
-        # Get response from LLM
-        response = self.llm.complete(prompt)
+        # Get response from LLM with retry logic for rate limits
+        max_retries = 5
+        for attempt in range(max_retries):
+            try:
+                response = self.llm.complete(prompt)
+                break
+            except Exception as e:
+                if "rate_limit" in str(e).lower() and attempt < max_retries - 1:
+                    wait_time = (2 ** attempt) * 5  # Exponential backoff: 5, 10, 20, 40, 80 seconds
+                    print(f"\n     ⚠️ Rate limit hit, waiting {wait_time}s before retry...")
+                    time.sleep(wait_time)
+                else:
+                    raise e
         
         end_time = time.time()
         response_time = end_time - start_time

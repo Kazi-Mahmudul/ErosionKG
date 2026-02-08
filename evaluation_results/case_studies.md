@@ -2,7 +2,7 @@
 
 **Purpose:** Demonstrate the practical advantages of ErosionKG GraphRAG over baseline vector-only RAG through representative examples.
 
-## Case Study 1: Hallucination Prevention
+## Case Study 1: Citation Grounding
 
 **Question (ID 1, Complexity: Low)**  
 According to the references provided for land restoration and sustainable management, how many steps are defined in the guide for applying the 'Options by Context' approach, and what are the specific volume and page range values for the 2019 Sinclair and Coe study that details this paradigm shift?
@@ -13,66 +13,35 @@ According to the references provided for land restoration and sustainable manage
 ---
 
 ### Standard RAG Response
-Based on the provided context, the specific question about the number of steps defined in the guide for applying the 'Options by Context' approach and the details of the 2019 Sinclair and Coe study cannot be directly answered. The references provided do not mention the "Options by Context" approach or a study by Sinclair and Coe in 2019.
+Based on the provided context, the specific question about the 'Options by Context' approach and the 2019 Sinclair and Coe study cannot be directly answered. The references provided do not mention the 'Options by Context' approach or the 2019 Sinclair and Coe study.
 
-However, reference 83 (Thomas, R.; Reed, M.; Clifton, K.; Appadurai, N.; Mills, A.; Zucca, C.; Kodsi, E.; Sircely, J.; Haddad, F.; Hagen, C.; et al. A Framework for Scaling Sustainable Land Management Options. Land Degrad. Dev. 2018, 29, 3272–3284) mentions a framework for scaling sustainable land management options, which might be related to the concept of applying options by context, but it does not provide the specific information requested.
+However, reference 83 (Thomas et al., 2018) mentions "A Framework for Scaling Sustainable Land Management Options," which might be related to the concept of 'Options by Context.' But, the exact steps defined in the guide for applying this approach are not specified in the provided context.
 
-Additionally, none of the provided references mention a study by Sinclair and Coe in 2019, or any specific volume and page range values for such a study. Therefore, it is not possible to provide a detailed answer to the question based on the given context.
+Additionally, there is no mention of a 2019 Sinclair and Coe study in the provided references, so the specific volume and page range values for this study cannot be determined.
+
+In summary, the provided context does not contain the necessary information to answer the question about the 'Options by Context' approach and the 2019 Sinclair and Coe study. More specific references or context would be required to provide a detailed answer.
 
 **Metrics:**
-- Faithfulness: 0.000
+- Faithfulness: nan
 - Citation Accuracy: 0.0%
 
 
 ---
 
 ### ErosionKG GraphRAG Response
-ERROR: 404
+According to the provided references, the 'Options by Context' approach is mentioned in Source 4 (Page: 27 | DOI: https://doi.org/10.3390/land12061206) as a paradigm shift in agronomy, introduced by Sinclair and Coe in 2019. The specific volume and page range values for the 2019 Sinclair and Coe study are not provided in the references. However, it is mentioned that the study is published in Experimental Agriculture, Volume 55 (Source: Sustainable Land Management and Climate Change Adaptation for Small-Scale Land Users in Sub-Saharan Africa, Page: 27 | DOI: https://doi.org/10.3390/land12061206).
+
+Regarding the guide for applying the 'Options by Context' approach, Source 4 (Page: 27 | DOI: https://doi.org/10.3390/land12061206) mentions an illustrated five-step guide, titled "Supporting Farmer Innovation to Restore: An Illustrated Five-Step Guide to Applying the Options by Context Approach to Land Restoration". Therefore, the guide defines 5 steps for applying the 'Options by Context' approach (Source: Sustainable Land Management and Climate Change Adaptation for Small-Scale Land Users in Sub-Saharan Africa, Page: 27 | DOI: https://doi.org/10.3390/land12061206).
+
+In summary, the 'Options by Context' approach is a paradigm shift in agronomy introduced by Sinclair and Coe in 2019, and there is a five-step guide for applying this approach to land restoration (Source: Sustainable Land Management and Climate Change Adaptation for Small-Scale Land Users in Sub-Saharan Africa, Page: 27 | DOI: https://doi.org/10.3390/land12061206).
 
 **Metrics:**
-- Faithfulness: 0.000
-- Citation Accuracy: 0.0%
+- Faithfulness: nan
+- Citation Accuracy: 100.0%
 
 
 ---
 
 ### Analysis
-**Advantage:** ErosionKG demonstrates hallucination prevention by staying grounded in retrieved evidence.
-
-## Case Study 2: Hallucination Prevention
-
-**Question (ID 1, Complexity: Low)**  
-According to the references provided for land restoration and sustainable management, how many steps are defined in the guide for applying the 'Options by Context' approach, and what are the specific volume and page range values for the 2019 Sinclair and Coe study that details this paradigm shift?
-
-**Expected Sources:**  
-- https://doi.org/10.3390/land12061206
-
----
-
-### Standard RAG Response
-Based on the provided context, the specific question about the number of steps defined in the guide for applying the 'Options by Context' approach and the details of the 2019 Sinclair and Coe study cannot be directly answered. The references provided do not mention the "Options by Context" approach or a study by Sinclair and Coe in 2019.
-
-However, reference 83 (Thomas, R.; Reed, M.; Clifton, K.; Appadurai, N.; Mills, A.; Zucca, C.; Kodsi, E.; Sircely, J.; Haddad, F.; Hagen, C.; et al. A Framework for Scaling Sustainable Land Management Options. Land Degrad. Dev. 2018, 29, 3272–3284) mentions a framework for scaling sustainable land management options, which might be related to the concept of applying options by context, but it does not provide the specific information requested.
-
-Additionally, none of the provided references mention a study by Sinclair and Coe in 2019, or any specific volume and page range values for such a study. Therefore, it is not possible to provide a detailed answer to the question based on the given context.
-
-**Metrics:**
-- Faithfulness: 0.000
-- Citation Accuracy: 0.0%
-
-
----
-
-### ErosionKG GraphRAG Response
-ERROR: 404
-
-**Metrics:**
-- Faithfulness: 0.000
-- Citation Accuracy: 0.0%
-
-
----
-
-### Analysis
-**Advantage:** ErosionKG demonstrates hallucination prevention by staying grounded in retrieved evidence.
+**Advantage:** ErosionKG demonstrates citation grounding by providing verifiable citations with DOIs.
 
