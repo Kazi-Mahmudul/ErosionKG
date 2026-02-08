@@ -316,14 +316,21 @@ async def get_metadata():
             auth=(os.getenv("NEO4J_USERNAME"), os.getenv("NEO4J_PASSWORD"))
         )
         
-        # Get statistics
+        # Get statistics using CALL subqueries for clean separation
         stats_query = """
-        MATCH (c:Chunk)
-        WITH count(DISTINCT c.sourceFile) as paper_count
-        MATCH (e:Entity)
-        WITH paper_count, count(e) as entity_count
-        MATCH ()-[r:RELATES]->()
-        RETURN paper_count, entity_count, count(r) as relationship_count
+        CALL {
+            MATCH (c:Chunk)
+            RETURN count(DISTINCT c.sourceFile) as paper_count
+        }
+        CALL {
+            MATCH (e:Entity)
+            RETURN count(e) as entity_count
+        }
+        CALL {
+            MATCH ()-[r:RELATES]->()
+            RETURN count(r) as relationship_count
+        }
+        RETURN paper_count, entity_count, relationship_count
         """
         
         result = driver.execute_query(stats_query)
