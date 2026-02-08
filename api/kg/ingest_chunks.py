@@ -20,7 +20,7 @@ NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 VECTOR_INDEX_NAME = "erosion_chunk_index"
-EMBEDDING_DIMENSION = 768  # gemini-embedding-001
+EMBEDDING_DIMENSION = 3072  # gemini-embedding-001
 
 class ChunkIngester:
     def __init__(self, uri, user, password):

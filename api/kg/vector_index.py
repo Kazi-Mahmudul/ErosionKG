@@ -22,7 +22,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 # Embedding dimension for text-embedding-004
-EMBEDDING_DIMENSION = 768  # gemini-embedding-001
+EMBEDDING_DIMENSION = 3072  # gemini-embedding-001
 VECTOR_INDEX_NAME = "erosion_chunk_index"
 
 
