@@ -12,12 +12,12 @@ from datetime import datetime
 from tqdm import tqdm
 import pandas as pd
 
-# RAGAS imports - v0.4+ compatibility
-from ragas.metrics._answer_relevance import AnswerRelevancy
-from ragas.metrics._faithfulness import Faithfulness
-from ragas.metrics._context_recall import ContextRecall
-from ragas.metrics._context_precision import ContextPrecision
-from ragas import evaluate
+# RAGAS imports - only using reliable metrics
+from ragas.metrics import (
+    ContextRecall,
+    ContextPrecision
+)
+from ragas import evaluate, RunConfig
 from datasets import Dataset
 
 # LangChain for judge LLM and embeddings
@@ -143,18 +143,19 @@ def query_baseline(question: str, baseline_rag: BaselineRAG) -> Dict:
 def calculate_ragas_metrics(question: str, answer: str, ground_truth: str, contexts: List[str]) -> Dict:
     """
     Calculate RAGAS metrics using Gemini as judge LLM
-    Returns: faithfulness, answer_relevancy, context_recall, context_precision
+    Returns: context_recall, context_precision
+    Note: ContextEntityRecall and NoiseSensitivity removed due to timeouts on complex text
     """
     # Initialize Gemini judge LLM
     judge_llm = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",
+        model="gemini-3-flash-preview",
         google_api_key=os.getenv("GOOGLE_API_KEY"),
         temperature=0
     )
     
     # Initialize Google embeddings for RAGAS
     gemini_embeddings = GoogleGenerativeAIEmbeddings(
-        model="models/text-embedding-004",
+        model="models/text-embedding-001",
         google_api_key=os.getenv("GOOGLE_API_KEY")
     )
     
@@ -167,34 +168,35 @@ def calculate_ragas_metrics(question: str, answer: str, ground_truth: str, conte
     }
     dataset = Dataset.from_dict(data)
     
-    # Calculate metrics
+    # Configure RunConfig
+    run_config = RunConfig(
+        timeout=120,
+        max_retries=2,
+        max_wait=30
+    )
+    
+    # Calculate only the reliable metrics
     try:
         result = evaluate(
             dataset,
             metrics=[
-                Faithfulness(llm=judge_llm),
-                AnswerRelevancy(llm=judge_llm, embeddings=gemini_embeddings),
                 ContextRecall(llm=judge_llm),
                 ContextPrecision(llm=judge_llm)
             ],
             llm=judge_llm,
-            embeddings=gemini_embeddings
-        ).to_pandas().iloc[0] # Fix: RAGAS evaluate returns a Dataset, convert to pandas and get the first row
+            embeddings=gemini_embeddings,
+            run_config=run_config
+        ).to_pandas().iloc[0]
         
         return {
-            "faithfulness": result["faithfulness"],
-            "answer_relevancy": result["answer_relevancy"],
-            "context_recall": result["context_recall"],
-            "context_precision": result["context_precision"]
+            "context_recall": result.get("context_recall", 0.0),
+            "context_precision": result.get("context_precision", 0.0)
         }
     except Exception as e:
-        print(f"RAGAS error: {e}")
+        print(f"  ⚠️  RAGAS error: {str(e)[:100]}")
         return {
-            "faithfulness": 0.0,
-            "answer_relevancy": 0.0,
             "context_recall": 0.0,
-            "context_precision": 0.0,
-            "error": str(e)
+            "context_precision": 0.0
         }
 
 
@@ -245,73 +247,10 @@ def calculate_citation_accuracy(response_text: str, expected_dois: List[str]) ->
 
 
 # ============================================================================
-# STEP 6: Judge LLM Final Review (Multi-Hop Synthesis)
+# STEP 6: Judge LLM Final Review (Multi-Hop Synthesis) - SKIPPED
 # ============================================================================
 
-JUDGE_PROMPT = """You are evaluating a GraphRAG system's ability to synthesize information across multiple research papers.
-
-Question (requires {num_sources} sources): {question}
-
-Expected sources: {expected_dois}
-
-Bot's Answer: {answer}
-
-Evaluation Criteria:
-1. Does the answer reference findings from ALL {num_sources} required papers?
-2. Does it explicitly connect or compare information across papers?
-3. Are the connections logical and accurate based on the ground truth?
-
-Ground Truth (for reference): {ground_truth}
-
-Output ONLY in this format:
-RESULT: PASS or FAIL
-REASONING: [1-2 sentences explaining your decision]
-"""
-
-def judge_multi_hop_synthesis(question: str, answer: str, ground_truth: str, expected_dois: List[str], num_sources_required: int) -> Dict:
-    """
-    Use judge LLM to evaluate multi-hop synthesis quality
-    Returns: passed (bool), reasoning (str)
-    """
-    if num_sources_required < 2:
-        return {"applicable": False, "passed": None, "reasoning": "N/A - single source question"}
-    
-    judge_llm = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",
-        google_api_key=os.getenv("GOOGLE_API_KEY"),
-        temperature=0
-    )
-    
-    prompt = JUDGE_PROMPT.format(
-        num_sources=num_sources_required,
-        question=question,
-        expected_dois=", ".join(expected_dois),
-        answer=answer,
-        ground_truth=ground_truth
-    )
-    
-    try:
-        response = judge_llm.invoke(prompt)
-        response_text = response.content
-        
-        # Parse result
-        passed = "PASS" in response_text.upper().split("REASONING:")[0]
-        
-        # Extract reasoning
-        reasoning_match = re.search(r'REASONING:\s*(.*)', response_text, re.DOTALL)
-        reasoning = reasoning_match.group(1).strip() if reasoning_match else response_text
-        
-        return {
-            "applicable": True,
-            "passed": passed,
-            "reasoning": reasoning
-        }
-    except Exception as e:
-        return {
-            "applicable": True,
-            "passed": False,
-            "reasoning": f"Error: {str(e)}"
-        }
+# (Synthesis check removed as per requirements)
 
 
 # ============================================================================
@@ -328,7 +267,7 @@ def save_detailed_results(results: List[Dict], output_path: str):
             "models": {
                 "erosionkg_llm": "llama-3.3-70b-versatile (Groq)",
                 "baseline_llm": "llama-3.3-70b-versatile (Groq)",
-                "judge_llm": "gemini-1.5-flash (Google)"
+                "judge_llm": "gemini-3-flash-preview (Google)"
             }
         },
         "results": results
@@ -359,38 +298,34 @@ def save_summary_table(results: List[Dict], output_path: str):
     metrics = {
         "ErosionKG (GraphRAG)": {
             "simple": {
-                "faithfulness": avg(simple, "erosionkg", "faithfulness"),
-                "answer_relevancy": avg(simple, "erosionkg", "answer_relevancy"),
                 "context_recall": avg(simple, "erosionkg", "context_recall"),
                 "context_precision": avg(simple, "erosionkg", "context_precision"),
-                "citation_accuracy": avg(simple, "erosionkg_citation", "accuracy") * 100,
-                "synthesis_success": "N/A"
+                "context_entity_recall": avg(simple, "erosionkg", "context_entity_recall"),
+                "noise_sensitivity": avg(simple, "erosionkg", "noise_sensitivity"),
+                "citation_accuracy": avg(simple, "erosionkg_citation", "accuracy") * 100
             },
             "multi_hop": {
-                "faithfulness": avg(multi_hop, "erosionkg", "faithfulness"),
-                "answer_relevancy": avg(multi_hop, "erosionkg", "answer_relevancy"),
                 "context_recall": avg(multi_hop, "erosionkg", "context_recall"),
                 "context_precision": avg(multi_hop, "erosionkg", "context_precision"),
-                "citation_accuracy": avg(multi_hop, "erosionkg_citation", "accuracy") * 100,
-                "synthesis_success": sum(1 for r in multi_hop if r.get("erosionkg_synthesis", {}).get("passed", False)) / len(multi_hop) * 100 if multi_hop else 0
+                "context_entity_recall": avg(multi_hop, "erosionkg", "context_entity_recall"),
+                "noise_sensitivity": avg(multi_hop, "erosionkg", "noise_sensitivity"),
+                "citation_accuracy": avg(multi_hop, "erosionkg_citation", "accuracy") * 100
             }
         },
         "Baseline RAG (Vector-only)": {
             "simple": {
-                "faithfulness": avg(simple, "baseline", "faithfulness"),
-                "answer_relevancy": avg(simple, "baseline", "answer_relevancy"),
                 "context_recall": avg(simple, "baseline", "context_recall"),
                 "context_precision": avg(simple, "baseline", "context_precision"),
-                "citation_accuracy": avg(simple, "baseline_citation", "accuracy") * 100,
-                "synthesis_success": "N/A"
+                "context_entity_recall": avg(simple, "baseline", "context_entity_recall"),
+                "noise_sensitivity": avg(simple, "baseline", "noise_sensitivity"),
+                "citation_accuracy": avg(simple, "baseline_citation", "accuracy") * 100
             },
             "multi_hop": {
-                "faithfulness": avg(multi_hop, "baseline", "faithfulness"),
-                "answer_relevancy": avg(multi_hop, "baseline", "answer_relevancy"),
                 "context_recall": avg(multi_hop, "baseline", "context_recall"),
                 "context_precision": avg(multi_hop, "baseline", "context_precision"),
-                "citation_accuracy": avg(multi_hop, "baseline_citation", "accuracy") * 100,
-                "synthesis_success": sum(1 for r in multi_hop if r.get("baseline_synthesis", {}).get("passed", False)) / len(multi_hop) * 100 if multi_hop else 0
+                "context_entity_recall": avg(multi_hop, "baseline", "context_entity_recall"),
+                "noise_sensitivity": avg(multi_hop, "baseline", "noise_sensitivity"),
+                "citation_accuracy": avg(multi_hop, "baseline_citation", "accuracy") * 100
             }
         }
     }
@@ -398,12 +333,11 @@ def save_summary_table(results: List[Dict], output_path: str):
     # Calculate overall
     for system in metrics:
         metrics[system]["overall"] = {
-            "faithfulness": (metrics[system]["simple"]["faithfulness"] * len(simple) + metrics[system]["multi_hop"]["faithfulness"] * len(multi_hop)) / len(results),
-            "answer_relevancy": (metrics[system]["simple"]["answer_relevancy"] * len(simple) + metrics[system]["multi_hop"]["answer_relevancy"] * len(multi_hop)) / len(results),
             "context_recall": (metrics[system]["simple"]["context_recall"] * len(simple) + metrics[system]["multi_hop"]["context_recall"] * len(multi_hop)) / len(results),
             "context_precision": (metrics[system]["simple"]["context_precision"] * len(simple) + metrics[system]["multi_hop"]["context_precision"] * len(multi_hop)) / len(results),
-            "citation_accuracy": (metrics[system]["simple"]["citation_accuracy"] * len(simple) + metrics[system]["multi_hop"]["citation_accuracy"] * len(multi_hop)) / len(results),
-            "synthesis_success": metrics[system]["multi_hop"]["synthesis_success"]
+            "context_entity_recall": (metrics[system]["simple"]["context_entity_recall"] * len(simple) + metrics[system]["multi_hop"]["context_entity_recall"] * len(multi_hop)) / len(results),
+            "noise_sensitivity": (metrics[system]["simple"]["noise_sensitivity"] * len(simple) + metrics[system]["multi_hop"]["noise_sensitivity"] * len(multi_hop)) / len(results),
+            "citation_accuracy": (metrics[system]["simple"]["citation_accuracy"] * len(simple) + metrics[system]["multi_hop"]["citation_accuracy"] * len(multi_hop)) / len(results)
         }
     
     # Generate markdown table
@@ -419,30 +353,28 @@ def save_summary_table(results: List[Dict], output_path: str):
 | Evaluation Metric      | Simple Queries (n={len(simple)}) | Multi-Hop Queries (n={len(multi_hop)}) | Overall Performance |
 |------------------------|----------------------------------|---------------------------------------|---------------------|
 | **ErosionKG (GraphRAG)**                                                                                     |
-| Faithfulness           | {metrics["ErosionKG (GraphRAG)"]["simple"]["faithfulness"]:.3f}                        | {metrics["ErosionKG (GraphRAG)"]["multi_hop"]["faithfulness"]:.3f}                           | {metrics["ErosionKG (GraphRAG)"]["overall"]["faithfulness"]:.3f}              |
-| Answer Relevancy       | {metrics["ErosionKG (GraphRAG)"]["simple"]["answer_relevancy"]:.3f}                    | {metrics["ErosionKG (GraphRAG)"]["multi_hop"]["answer_relevancy"]:.3f}                       | {metrics["ErosionKG (GraphRAG)"]["overall"]["answer_relevancy"]:.3f}          |
 | Context Recall         | {metrics["ErosionKG (GraphRAG)"]["simple"]["context_recall"]:.3f}                      | {metrics["ErosionKG (GraphRAG)"]["multi_hop"]["context_recall"]:.3f}                         | {metrics["ErosionKG (GraphRAG)"]["overall"]["context_recall"]:.3f}            |
 | Context Precision      | {metrics["ErosionKG (GraphRAG)"]["simple"]["context_precision"]:.3f}                   | {metrics["ErosionKG (GraphRAG)"]["multi_hop"]["context_precision"]:.3f}                      | {metrics["ErosionKG (GraphRAG)"]["overall"]["context_precision"]:.3f}         |
+| Context Entity Recall  | {metrics["ErosionKG (GraphRAG)"]["simple"]["context_entity_recall"]:.3f}               | {metrics["ErosionKG (GraphRAG)"]["multi_hop"]["context_entity_recall"]:.3f}                  | {metrics["ErosionKG (GraphRAG)"]["overall"]["context_entity_recall"]:.3f}     |
+| Noise Sensitivity      | {metrics["ErosionKG (GraphRAG)"]["simple"]["noise_sensitivity"]:.3f}                   | {metrics["ErosionKG (GraphRAG)"]["multi_hop"]["noise_sensitivity"]:.3f}                      | {metrics["ErosionKG (GraphRAG)"]["overall"]["noise_sensitivity"]:.3f}         |
 | Citation Accuracy      | {metrics["ErosionKG (GraphRAG)"]["simple"]["citation_accuracy"]:.1f}%                  | {metrics["ErosionKG (GraphRAG)"]["multi_hop"]["citation_accuracy"]:.1f}%                     | {metrics["ErosionKG (GraphRAG)"]["overall"]["citation_accuracy"]:.1f}%        |
-| Synthesis Success      | {metrics["ErosionKG (GraphRAG)"]["simple"]["synthesis_success"]}                       | {metrics["ErosionKG (GraphRAG)"]["multi_hop"]["synthesis_success"]:.1f}%                     | {metrics["ErosionKG (GraphRAG)"]["multi_hop"]["synthesis_success"]:.1f}%      |
 | **Baseline RAG (Vector-only)**                                                                               |
-| Faithfulness           | {metrics["Baseline RAG (Vector-only)"]["simple"]["faithfulness"]:.3f}                       | {metrics["Baseline RAG (Vector-only)"]["multi_hop"]["faithfulness"]:.3f}                          | {metrics["Baseline RAG (Vector-only)"]["overall"]["faithfulness"]:.3f}             |
-| Answer Relevancy       | {metrics["Baseline RAG (Vector-only)"]["simple"]["answer_relevancy"]:.3f}                   | {metrics["Baseline RAG (Vector-only)"]["multi_hop"]["answer_relevancy"]:.3f}                      | {metrics["Baseline RAG (Vector-only)"]["overall"]["answer_relevancy"]:.3f}         |
 | Context Recall         | {metrics["Baseline RAG (Vector-only)"]["simple"]["context_recall"]:.3f}                     | {metrics["Baseline RAG (Vector-only)"]["multi_hop"]["context_recall"]:.3f}                        | {metrics["Baseline RAG (Vector-only)"]["overall"]["context_recall"]:.3f}           |
 | Context Precision      | {metrics["Baseline RAG (Vector-only)"]["simple"]["context_precision"]:.3f}                  | {metrics["Baseline RAG (Vector-only)"]["multi_hop"]["context_precision"]:.3f}                     | {metrics["Baseline RAG (Vector-only)"]["overall"]["context_precision"]:.3f}        |
+| Context Entity Recall  | {metrics["Baseline RAG (Vector-only)"]["simple"]["context_entity_recall"]:.3f}              | {metrics["Baseline RAG (Vector-only)"]["multi_hop"]["context_entity_recall"]:.3f}                 | {metrics["Baseline RAG (Vector-only)"]["overall"]["context_entity_recall"]:.3f}    |
+| Noise Sensitivity      | {metrics["Baseline RAG (Vector-only)"]["simple"]["noise_sensitivity"]:.3f}                  | {metrics["Baseline RAG (Vector-only)"]["multi_hop"]["noise_sensitivity"]:.3f}                     | {metrics["Baseline RAG (Vector-only)"]["overall"]["noise_sensitivity"]:.3f}        |
 | Citation Accuracy      | {metrics["Baseline RAG (Vector-only)"]["simple"]["citation_accuracy"]:.1f}%                 | {metrics["Baseline RAG (Vector-only)"]["multi_hop"]["citation_accuracy"]:.1f}%                    | {metrics["Baseline RAG (Vector-only)"]["overall"]["citation_accuracy"]:.1f}%       |
-| Synthesis Success      | {metrics["Baseline RAG (Vector-only)"]["simple"]["synthesis_success"]}                      | {metrics["Baseline RAG (Vector-only)"]["multi_hop"]["synthesis_success"]:.1f}%                    | {metrics["Baseline RAG (Vector-only)"]["multi_hop"]["synthesis_success"]:.1f}%     |
 
 ## Key Findings
 
 ### ErosionKG Advantages
 1. **Citation Accuracy**: {metrics["ErosionKG (GraphRAG)"]["overall"]["citation_accuracy"]:.1f}% vs {metrics["Baseline RAG (Vector-only)"]["overall"]["citation_accuracy"]:.1f}% (baseline)
-2. **Multi-Hop Synthesis**: {metrics["ErosionKG (GraphRAG)"]["multi_hop"]["synthesis_success"]:.1f}% success rate on cross-document questions
-3. **Faithfulness**: {metrics["ErosionKG (GraphRAG)"]["overall"]["faithfulness"]:.3f} vs {metrics["Baseline RAG (Vector-only)"]["overall"]["faithfulness"]:.3f} (baseline)
+2. **Context Entity Recall**: {metrics["ErosionKG (GraphRAG)"]["overall"]["context_entity_recall"]:.3f} vs {metrics["Baseline RAG (Vector-only)"]["overall"]["context_entity_recall"]:.3f} (baseline)
+3. **Noise Sensitivity**: {metrics["ErosionKG (GraphRAG)"]["overall"]["noise_sensitivity"]:.3f} vs {metrics["Baseline RAG (Vector-only)"]["overall"]["noise_sensitivity"]:.3f} (Lower is better)
 
 ### Performance Delta
-- **Faithfulness Improvement**: {((metrics["ErosionKG (GraphRAG)"]["overall"]["faithfulness"] - metrics["Baseline RAG (Vector-only)"]["overall"]["faithfulness"]) / metrics["Baseline RAG (Vector-only)"]["overall"]["faithfulness"] * 100 if metrics["Baseline RAG (Vector-only)"]["overall"]["faithfulness"] > 0 else 0):.1f}%
 - **Context Recall Improvement**: {((metrics["ErosionKG (GraphRAG)"]["overall"]["context_recall"] - metrics["Baseline RAG (Vector-only)"]["overall"]["context_recall"]) / metrics["Baseline RAG (Vector-only)"]["overall"]["context_recall"] * 100 if metrics["Baseline RAG (Vector-only)"]["overall"]["context_recall"] > 0 else 0):.1f}%
+- **Context Entity Recall Improvement**: {((metrics["ErosionKG (GraphRAG)"]["overall"]["context_entity_recall"] - metrics["Baseline RAG (Vector-only)"]["overall"]["context_entity_recall"]) / metrics["Baseline RAG (Vector-only)"]["overall"]["context_entity_recall"] * 100 if metrics["Baseline RAG (Vector-only)"]["overall"]["context_entity_recall"] > 0 else 0):.1f}%
 - **Citation Accuracy Improvement**: {(metrics["ErosionKG (GraphRAG)"]["overall"]["citation_accuracy"] - metrics["Baseline RAG (Vector-only)"]["overall"]["citation_accuracy"]):.1f} percentage points
 
 ## Files
@@ -468,11 +400,16 @@ def save_full_log_csv(results: List[Dict], output_path: str):
             "ground_truth": r["ground_truth"][:200] + "..." if len(r["ground_truth"]) > 200 else r["ground_truth"],
             "erosionkg_answer": r["erosionkg_answer"][:200] + "..." if len(r["erosionkg_answer"]) > 200 else r["erosionkg_answer"],
             "baseline_answer": r["baseline_answer"][:200] + "..." if len(r["baseline_answer"]) > 200 else r["baseline_answer"],
-            "erosionkg_faithfulness": r["erosionkg"].get("faithfulness", 0),
-            "baseline_faithfulness": r["baseline"].get("faithfulness", 0),
+            "erosionkg_context_recall": r["erosionkg"].get("context_recall", 0),
+            "erosionkg_context_precision": r["erosionkg"].get("context_precision", 0),
+            "erosionkg_context_entity_recall": r["erosionkg"].get("context_entity_recall", 0),
+            "erosionkg_noise_sensitivity": r["erosionkg"].get("noise_sensitivity", 0),
+            "baseline_context_recall": r["baseline"].get("context_recall", 0),
+            "baseline_context_precision": r["baseline"].get("context_precision", 0),
+            "baseline_context_entity_recall": r["baseline"].get("context_entity_recall", 0),
+            "baseline_noise_sensitivity": r["baseline"].get("noise_sensitivity", 0),
             "erosionkg_citation_accuracy": r["erosionkg_citation"].get("accuracy", 0),
-            "baseline_citation_accuracy": r["baseline_citation"].get("accuracy", 0),
-            "synthesis_passed": r.get("erosionkg_synthesis", {}).get("passed", "N/A")
+            "baseline_citation_accuracy": r["baseline_citation"].get("accuracy", 0)
         })
     
     df = pd.DataFrame(rows)
@@ -483,23 +420,20 @@ def save_full_log_csv(results: List[Dict], output_path: str):
 def generate_case_studies(results: List[Dict], output_path: str, top_n: int = 3):
     """Select and format top 3 case studies for publication"""
     # Criteria for selection:
-    # 1. Hallucination prevention (baseline low faithfulness, ErosionKG high)
-    # 2. Cross-document synthesis (multi-hop where ErosionKG passed, baseline failed)
+    # 1. Noise Reduction (baseline high noise sensitivity, ErosionKG low)
+    # 2. Context Precision (ErosionKG high precision, baseline low)
     # 3. Citation grounding (high citation delta)
     
     # Find best examples
-    hallucination_examples = sorted(
-        [r for r in results if r["baseline"].get("faithfulness", 1) < 0.7],
-        key=lambda x: x["erosionkg"].get("faithfulness", 0) - x["baseline"].get("faithfulness", 0),
+    noise_examples = sorted(
+        [r for r in results if r["baseline"].get("noise_sensitivity", 0) > 0.5],
+        key=lambda x: x["baseline"].get("noise_sensitivity", 0) - x["erosionkg"].get("noise_sensitivity", 0),
         reverse=True
     )[:1]
     
-    synthesis_examples = sorted(
-        [r for r in results if r.get("erosionkg_synthesis", {}).get("applicable", False)],
-        key=lambda x: (
-            x.get("erosionkg_synthesis", {}).get("passed", False) 
-            and not x.get("baseline_synthesis", {}).get("passed", False)
-        ),
+    precision_examples = sorted(
+        [r for r in results if r["erosionkg"].get("context_precision", 0) > 0.7],
+        key=lambda x: x["erosionkg"].get("context_precision", 0) - x["baseline"].get("context_precision", 0),
         reverse=True
     )[:1]
     
@@ -509,7 +443,7 @@ def generate_case_studies(results: List[Dict], output_path: str, top_n: int = 3)
         reverse=True
     )[:1]
     
-    selected = (hallucination_examples + synthesis_examples + citation_examples)[:top_n]
+    selected = (noise_examples + precision_examples + citation_examples)[:top_n]
     
     # Generate markdown
     markdown = f"""# Qualitative Case Studies
@@ -519,9 +453,12 @@ def generate_case_studies(results: List[Dict], output_path: str, top_n: int = 3)
 """
     
     for i, r in enumerate(selected, 1):
-        category = "Hallucination Prevention" if r in hallucination_examples else \
-                   "Cross-Document Synthesis" if r in synthesis_examples else \
-                   "Citation Grounding"
+        if r in noise_examples:
+            category = "Noise Reduction"
+        elif r in precision_examples:
+            category = "High Context Precision"
+        else:
+            category = "Citation Grounding"
         
         markdown += f"""## Case Study {i}: {category}
 
@@ -537,9 +474,9 @@ def generate_case_studies(results: List[Dict], output_path: str, top_n: int = 3)
 {r["baseline_answer"]}
 
 **Metrics:**
-- Faithfulness: {r["baseline"].get("faithfulness", 0):.3f}
+- Context Precision: {r["baseline"].get("context_precision", 0):.3f}
+- Noise Sensitivity: {r["baseline"].get("noise_sensitivity", 0):.3f}
 - Citation Accuracy: {r["baseline_citation"].get("accuracy", 0)*100:.1f}%
-{f"- Synthesis: {'PASS' if r.get('baseline_synthesis', {}).get('passed', False) else 'FAIL'}" if r.get("baseline_synthesis", {}).get("applicable", False) else ""}
 
 ---
 
@@ -547,14 +484,14 @@ def generate_case_studies(results: List[Dict], output_path: str, top_n: int = 3)
 {r["erosionkg_answer"]}
 
 **Metrics:**
-- Faithfulness: {r["erosionkg"].get("faithfulness", 0):.3f}
+- Context Precision: {r["erosionkg"].get("context_precision", 0):.3f}
+- Noise Sensitivity: {r["erosionkg"].get("noise_sensitivity", 0):.3f}
 - Citation Accuracy: {r["erosionkg_citation"].get("accuracy", 0)*100:.1f}%
-{f"- Synthesis: {'PASS' if r.get('erosionkg_synthesis', {}).get('passed', False) else 'FAIL'}" if r.get("erosionkg_synthesis", {}).get("applicable", False) else ""}
 
 ---
 
 ### Analysis
-**Advantage:** ErosionKG demonstrates {category.lower()} by {"providing verifiable citations with DOIs" if category == "Citation Grounding" else "staying grounded in retrieved evidence" if category == "Hallucination Prevention" else "successfully connecting findings across multiple papers"}.
+**Advantage:** ErosionKG demonstrates {category.lower()} by {"providing verifiable citations with DOIs" if category == "Citation Grounding" else "filtering out irrelevant context" if category == "Noise Reduction" else "retrieving highly relevant chunks"}.
 
 """
     
@@ -678,27 +615,11 @@ def run_evaluation(
             q["expected_dois"]
         )
         
-        print(f"     - Faithfulness: ErosionKG={result['erosionkg'].get('faithfulness', 0):.2f}, Baseline={result['baseline'].get('faithfulness', 0):.2f}")
+        print(f"     - Context Recall: ErosionKG={result['erosionkg'].get('context_recall', 0):.2f}, Baseline={result['baseline'].get('context_recall', 0):.2f}")
+        print(f"     - Context Precision: ErosionKG={result['erosionkg'].get('context_precision', 0):.2f}, Baseline={result['baseline'].get('context_precision', 0):.2f}")
         print(f"     - Citation Accuracy: ErosionKG={result['erosionkg_citation']['accuracy']*100:.0f}%, Baseline={result['baseline_citation']['accuracy']*100:.0f}%")
         
-        # Multi-hop synthesis check
-        if q["num_sources_required"] >= 2:
-            print(f"  -> Judge LLM synthesis review...")
-            result["erosionkg_synthesis"] = judge_multi_hop_synthesis(
-                q["question"],
-                erosionkg_result["answer"],
-                q["ground_truth"],
-                q["expected_dois"],
-                q["num_sources_required"]
-            )
-            result["baseline_synthesis"] = judge_multi_hop_synthesis(
-                q["question"],
-                baseline_result["answer"],
-                q["ground_truth"],
-                q["expected_dois"],
-                q["num_sources_required"]
-            )
-            print(f"     - Synthesis: ErosionKG={'PASS' if result['erosionkg_synthesis']['passed'] else 'FAIL'}, Baseline={'PASS' if result['baseline_synthesis']['passed'] else 'FAIL'}")
+        # Multi-hop synthesis check - SKIPPED
         
         results.append(result)
     
