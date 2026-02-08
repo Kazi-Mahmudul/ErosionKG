@@ -268,7 +268,7 @@ def run_resolution(dry_run: bool = False, similarity_threshold: float = 80.0):
     logger.info("Connected to Neo4j")
     
     # Initialize LLM
-    llm = RateLimitedGemini(model="models/gemini-2.0-flash", api_key=GOOGLE_API_KEY)
+    llm = RateLimitedGemini(model="models/gemini-3-flash-preview", api_key=GOOGLE_API_KEY)
     
     # 1. Fetch entities
     entities = get_all_entities(driver)

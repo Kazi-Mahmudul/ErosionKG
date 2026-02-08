@@ -128,7 +128,7 @@ def run_kg_extraction(input_file: str = "api/data/extracted_chunks.json", test_m
 
     # 2. Initialize LLM
     logger.info("Initializing Gemini...")
-    llm = RateLimitedGemini(model="models/gemini-2.0-flash", api_key=GOOGLE_API_KEY)
+    llm = RateLimitedGemini(model="models/gemini-3-flash-preview", api_key=GOOGLE_API_KEY)
 
     # 3. Load Data
     if not os.path.exists(input_file):

@@ -65,13 +65,13 @@ class RateLimitedGemini(Gemini):
         time.sleep(5)
         return await super().astream_chat(*args, **kwargs)
 
-llm = RateLimitedGemini(model="models/gemini-2.0-flash", api_key=GOOGLE_API_KEY)
+llm = RateLimitedGemini(model="models/gemini-3-flash-preview", api_key=GOOGLE_API_KEY)
 
 # Initialize LlamaParse
 parser = LlamaParse(
     result_type="markdown",
     use_vendor_multimodal_model=True,
-    vendor_multimodal_model_name="gemini-2.0-flash-001", # Adjusted to a known valid model name just in case, or user requested 2.5 explicitly? User asked for 2.5-flash. I will try to use the specific string requested if possible, but standard is usually 1.5/2.0. I will stick to the user's request string but keep a fallback note in mind. actually `gemini-2.5-flash` might be a typo for `gemini-1.5-flash` or a preview model. I will use the string provided by user.
+    vendor_multimodal_model_name="gemini-3-flash-preview",
     parsing_instruction="Extract this scientific paper on landscape erosion. Pay extreme attention to the numerical values and units in tables and charts, ensuring they are preserved in Markdown format.",
     api_key=LLAMA_CLOUD_API_KEY
 )

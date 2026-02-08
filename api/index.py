@@ -307,6 +307,38 @@ async def chat(request: ChatRequest):
         }
 
 
+@app.post("/api/chat_eval")
+async def chat_eval(request: ChatRequest):
+    """Evaluation endpoint that returns full retrieval details for RAGAS"""
+    retriever = get_retriever()
+    llm = get_llm()
+    
+    retrieval_result = retriever.retrieve(request.query, top_k=3, hops=1)
+    graph_data = extract_graph_data(retrieval_result)
+    graph_context, entity_context = format_context_with_doi(retrieval_result)
+    
+    prompt = GRAPHRAG_RESPONSE_TEMPLATE.format(
+        graph_context=graph_context,
+        entity_context=entity_context,
+        query=request.query
+    )
+    
+    response = llm.complete(prompt)
+    
+    # Extract retrieved contexts for RAGAS
+    contexts = [chunk.content for chunk in retrieval_result.chunks]
+    dois = [chunk.doi_url for chunk in retrieval_result.chunks if chunk.doi_url and chunk.doi_url != "N/A"]
+    
+    return {
+        "response": response.text,
+        "contexts": contexts,  # For RAGAS metrics
+        "dois": dois,          # For citation accuracy check
+        "graph_data": graph_data,
+        "num_chunks": len(retrieval_result.chunks),
+        "num_triplets": len(retrieval_result.triplets)
+    }
+
+
 @app.get("/api/metadata")
 async def get_metadata():
     """Get research library metadata"""
